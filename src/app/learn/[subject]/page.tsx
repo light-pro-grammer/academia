@@ -23,6 +23,7 @@ const curriculum: Record<string, {
           { id: "03-counting-20-100", title: "Числа від 20 до 100" },
           { id: "04-comparing-numbers", title: "Порівняння чисел" },
           { id: "05-ordinal-numbers", title: "Порядкові числа" },
+          { id: "06-even-odd-numbers", title: "Парні та непарні числа" },
         ],
       },
     ],
