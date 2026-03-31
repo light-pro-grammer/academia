@@ -85,6 +85,8 @@ const curriculum: Record<string, Record<string, {
       lessons: [
         { id: "01-what-is-fraction", title: "Що таке дріб?" },
         { id: "02-fractions-visual", title: "Дріб на малюнку" },
+        { id: "03-comparing-fractions", title: "Порівняння дробів" },
+        { id: "04-equivalent-fractions", title: "Рівні дроби" },
       ],
     },
   },
