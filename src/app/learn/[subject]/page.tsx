@@ -30,6 +30,7 @@ const curriculum: Record<string, {
           { id: "10-tens-and-units", title: "Десятки і одиниці" },
           { id: "11-skip-counting", title: "Лічба двійками, п'ятірками, десятками" },
           { id: "12-number-line-visual", title: "Число на числовій прямій" },
+          { id: "13-rounding", title: "Округлення до десятка" },
         ],
       },
     ],
