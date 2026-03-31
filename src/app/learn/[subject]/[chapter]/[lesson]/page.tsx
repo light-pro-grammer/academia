@@ -22,6 +22,7 @@ const curriculum: Record<string, Record<string, {
         { id: "11-skip-counting", title: "Лічба двійками, п'ятірками, десятками" },
         { id: "12-number-line-visual", title: "Число на числовій прямій" },
         { id: "13-rounding", title: "Округлення до десятка" },
+        { id: "14-review", title: "Повторення і перевірка знань" },
       ],
     },
   },
