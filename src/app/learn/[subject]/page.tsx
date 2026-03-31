@@ -24,6 +24,7 @@ const curriculum: Record<string, {
           { id: "04-comparing-numbers", title: "Порівняння чисел" },
           { id: "05-ordinal-numbers", title: "Порядкові числа" },
           { id: "06-even-odd-numbers", title: "Парні та непарні числа" },
+          { id: "07-zero", title: "Число 0 — що це таке?" },
         ],
       },
     ],
