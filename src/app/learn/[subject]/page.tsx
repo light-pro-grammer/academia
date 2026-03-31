@@ -39,6 +39,7 @@ const curriculum: Record<string, {
                 title: "Додавання",
                 lessons: [
                     { id: "01-what-is-addition", title: "Що таке додавання?" },
+                    { id: "02-addition-to-10", title: "Додавання в межах 10" },
                 ],
             },
         ],
