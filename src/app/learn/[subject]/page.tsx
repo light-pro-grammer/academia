@@ -22,6 +22,7 @@ const curriculum: Record<string, {
           { id: "02-counting-11-20", title: "Числа від 11 до 20" },
           { id: "03-counting-20-100", title: "Числа від 20 до 100" },
           { id: "04-comparing-numbers", title: "Порівняння чисел" },
+          { id: "05-ordinal-numbers", title: "Порядкові числа" },
         ],
       },
     ],
