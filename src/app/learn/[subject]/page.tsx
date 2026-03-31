@@ -55,6 +55,7 @@ const curriculum: Record<string, {
                     { id: "01-what-is-subtraction", title: "Що таке віднімання?" },
                     { id: "02-subtraction-to-10", title: "Віднімання в межах 10" },
                     { id: "03-subtraction-to-20", title: "Віднімання в межах 20" },
+                    { id: "04-subtraction-two-digit", title: "Віднімання двозначних чисел" },
                 ],
             },
         ],
