@@ -50,6 +50,12 @@ const curriculum: Record<string, Record<string, {
         { id: "07-subtraction-review", title: "Повторення: Віднімання" },
       ],
     },
+    "4-multiplication": {
+      subject: "Математика",
+      lessons: [
+        { id: "01-what-is-multiplication", title: "Що таке множення?" },
+      ],
+    },
   },
 };
 

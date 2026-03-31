@@ -61,6 +61,13 @@ const curriculum: Record<string, {
                     { id: "07-subtraction-review", title: "Повторення: Віднімання" },
                 ],
             },
+            {
+                id: "4-multiplication",
+                title: "Множення",
+                lessons: [
+                    { id: "01-what-is-multiplication", title: "Що таке множення?" },
+                ],
+            },
         ],
     },
 };
