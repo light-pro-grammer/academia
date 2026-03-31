@@ -84,6 +84,7 @@ const curriculum: Record<string, Record<string, {
       subject: "Математика",
       lessons: [
         { id: "01-what-is-fraction", title: "Що таке дріб?" },
+        { id: "02-fractions-visual", title: "Дріб на малюнку" },
       ],
     },
   },

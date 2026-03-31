@@ -112,6 +112,7 @@ const curriculum: Record<string, SubjectData> = {
                 title: "Дроби",
                 lessons: [
                     { id: "01-what-is-fraction", title: "Що таке дріб?" },
+                    { id: "02-fractions-visual", title: "Дріб на малюнку" },
                 ],
             },
         ],
