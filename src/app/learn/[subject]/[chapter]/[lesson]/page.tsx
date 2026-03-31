@@ -42,6 +42,7 @@ const curriculum: Record<string, Record<string, {
       subject: "Математика",
       lessons: [
         { id: "01-what-is-subtraction", title: "Що таке віднімання?" },
+        { id: "02-subtraction-to-10", title: "Віднімання в межах 10" },
       ],
     },
   },
