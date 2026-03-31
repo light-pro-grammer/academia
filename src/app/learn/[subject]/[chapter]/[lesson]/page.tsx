@@ -72,6 +72,12 @@ const curriculum: Record<string, Record<string, {
       subject: "Математика",
       lessons: [
         { id: "01-what-is-division", title: "Що таке ділення?" },
+        { id: "02-division-by-2-3", title: "Ділення на 2 і 3" },
+        { id: "03-division-by-4-5", title: "Ділення на 4 і 5" },
+        { id: "04-division-by-6-9", title: "Ділення на 6, 7, 8, 9" },
+        { id: "05-division-with-remainder", title: "Ділення з остачею" },
+        { id: "06-division-problems", title: "Задачі на ділення" },
+        { id: "07-division-review", title: "Повторення: Ділення" },
       ],
     },
   },
