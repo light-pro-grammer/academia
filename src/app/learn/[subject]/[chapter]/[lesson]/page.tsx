@@ -106,6 +106,19 @@ const curriculum: Record<string, Record<string, {
         { id: "08-decimals-review", title: "Повторення: Десяткові дроби" },
       ],
     },
+    "8-geometry": {
+      subject: "Математика",
+      lessons: [
+        { id: "01-points-lines", title: "Точка, пряма, відрізок" },
+        { id: "02-angles", title: "Кути" },
+        { id: "03-triangles", title: "Трикутники" },
+        { id: "04-quadrilaterals", title: "Чотирикутники" },
+        { id: "05-circle", title: "Коло і круг" },
+        { id: "06-perimeter", title: "Периметр" },
+        { id: "07-area", title: "Площа" },
+        { id: "08-volume", title: "Об'єм" },
+      ],
+    },
   },
 };
 
