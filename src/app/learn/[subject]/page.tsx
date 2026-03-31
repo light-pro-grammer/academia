@@ -44,6 +44,7 @@ const curriculum: Record<string, {
                     { id: "04-addition-two-digit", title: "Додавання двозначних чисел" },
                     { id: "05-addition-problems", title: "Задачі на додавання" },
                     { id: "06-addition-properties", title: "Властивості додавання" },
+                    { id: "07-checking-addition", title: "Перевірка додавання" },
                 ],
             },
         ],
