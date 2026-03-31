@@ -1,4 +1,5 @@
 import Link from "next/link";
+import ProgressTracker from "./ProgressTracker";
 
 interface LessonNav {
   title: string;
@@ -9,12 +10,13 @@ interface Props {
   subject: string;
   chapter: string;
   title: string;
+  lessonId: string;
   prev?: LessonNav;
   next?: LessonNav;
   children: React.ReactNode;
 }
 
-export default function LessonLayout({ subject, chapter, title, prev, next, children }: Props) {
+export default function LessonLayout({ subject, chapter, title, lessonId, prev, next, children }: Props) {
   return (
     <div className="min-h-screen bg-gray-50">
       <header className="border-b border-gray-200 bg-white px-6 py-4">
@@ -33,7 +35,11 @@ export default function LessonLayout({ subject, chapter, title, prev, next, chil
           {children}
         </div>
 
-        <div className="mt-12 pt-6 border-t border-gray-200 flex items-center justify-between gap-4">
+        <div className="mt-10 pt-6 border-t border-gray-200">
+          <ProgressTracker lessonId={lessonId} />
+        </div>
+
+        <div className="mt-6 flex items-center justify-between gap-4">
           {prev ? (
             <Link
               href={prev.href}

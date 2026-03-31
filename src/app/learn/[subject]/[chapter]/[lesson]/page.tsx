@@ -103,7 +103,6 @@ export default async function LessonPage({ params }: Props) {
 
   const prev = lessons[currentIndex - 1];
   const next = lessons[currentIndex + 1];
-
   const base = `/learn/${subject}/${chapter}`;
 
   let LessonContent: React.ComponentType;
@@ -122,6 +121,7 @@ export default async function LessonPage({ params }: Props) {
       subject={meta!.subject}
       chapter={meta!.chapter}
       title={meta!.title}
+      lessonId={`${subject}-${chapter}-${lesson}`}
       prev={prev ? { title: prev.title, href: `${base}/${prev.id}` } : undefined}
       next={next ? { title: next.title, href: `${base}/${next.id}` } : undefined}
     >

@@ -1,15 +1,29 @@
+"use client";
+
+import React from "react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { useEffect, useState } from "react";
 
-const curriculum: Record<string, {
+// Типізація для структури навчального плану
+interface Lesson {
+    id: string;
+    title: string;
+}
+
+interface Chapter {
+    id: string;
+    title: string;
+    lessons: Lesson[];
+}
+
+interface SubjectData {
     title: string;
     emoji: string;
-    chapters: {
-        id: string;
-        title: string;
-        lessons: { id: string; title: string }[];
-    }[];
-}> = {
+    chapters: Chapter[];
+}
+
+const curriculum: Record<string, SubjectData> = {
     math: {
         title: "Математика",
         emoji: "🔢",
@@ -97,14 +111,34 @@ const curriculum: Record<string, {
     },
 };
 
-interface Props {
+// В Next.js 15 params — це Promise
+interface SubjectPageProps {
     params: Promise<{ subject: string }>;
 }
 
-export default async function SubjectPage({ params }: Props) {
-    const { subject } = await params;
+export default function SubjectPage({ params }: SubjectPageProps) {
+    // Розпаковуємо params за допомогою React.use()
+    const { subject } = React.use(params);
+
     const data = curriculum[subject];
     if (!data) notFound();
+
+    const [completed, setCompleted] = useState<Record<string, boolean>>({});
+
+    useEffect(() => {
+        const result: Record<string, boolean> = {};
+        data.chapters.forEach((chapter) => {
+            chapter.lessons.forEach((lesson) => {
+                const key = `lesson-${subject}-${chapter.id}-${lesson.id}`;
+                result[key] = localStorage.getItem(key) === "done";
+            });
+        });
+        setCompleted(result);
+    }, [subject, data]);
+
+    const totalLessons = data.chapters.reduce((acc, ch) => acc + ch.lessons.length, 0);
+    const completedCount = Object.values(completed).filter(Boolean).length;
+    const progressPercentage = totalLessons > 0 ? Math.round((completedCount / totalLessons) * 100) : 0;
 
     return (
         <div className="min-h-screen bg-gray-50">
@@ -117,33 +151,65 @@ export default async function SubjectPage({ params }: Props) {
             </header>
 
             <main className="max-w-3xl mx-auto px-6 py-12">
-                <div className="flex items-center gap-4 mb-10">
+                <div className="flex items-center gap-4 mb-4">
                     <span className="text-5xl">{data.emoji}</span>
                     <h1 className="text-3xl font-semibold text-gray-900">{data.title}</h1>
                 </div>
 
+                <div className="mb-8">
+                    <div className="flex items-center justify-between text-sm mb-2">
+                        <span className="text-gray-500">Прогрес: {completedCount} з {totalLessons} уроків</span>
+                        <span className="text-green-700 font-medium">{progressPercentage}%</span>
+                    </div>
+                    <div className="w-full bg-gray-200 rounded-full h-2">
+                        <div
+                            className="bg-green-500 h-2 rounded-full transition-all duration-500"
+                            style={{ width: `${progressPercentage}%` }}
+                        />
+                    </div>
+                </div>
+
                 <div className="space-y-8">
-                    {data.chapters.map((chapter) => (
-                        <div key={chapter.id}>
-                            <h2 className="text-xs font-medium uppercase tracking-widest text-gray-400 mb-3">
-                                {chapter.title}
-                            </h2>
-                            <div className="space-y-2">
-                                {chapter.lessons.map((lesson, i) => (
-                                    <Link
-                                        key={lesson.id}
-                                        href={`/learn/${subject}/${chapter.id}/${lesson.id}`}
-                                        className="flex items-center gap-4 rounded-xl border border-gray-200 bg-white px-5 py-4 hover:border-green-400 transition-all group"
-                                    >
-                                        <span className="text-sm font-medium text-gray-300 w-6">{i + 1}</span>
-                                        <span className="text-gray-800 group-hover:text-green-700 transition-colors">
-                                            {lesson.title}
-                                        </span>
-                                    </Link>
-                                ))}
+                    {data.chapters.map((chapter) => {
+                        const chapterLessonsKeys = chapter.lessons.map(l => `lesson-${subject}-${chapter.id}-${l.id}`);
+                        const chapterCompletedCount = chapterLessonsKeys.filter(key => completed[key]).length;
+
+                        return (
+                            <div key={chapter.id}>
+                                <div className="flex items-center justify-between mb-3">
+                                    <h2 className="text-xs font-medium uppercase tracking-widest text-gray-400">
+                                        {chapter.title}
+                                    </h2>
+                                    <span className="text-xs text-gray-400">
+                                        {chapterCompletedCount}/{chapter.lessons.length}
+                                    </span>
+                                </div>
+                                <div className="space-y-2">
+                                    {chapter.lessons.map((lesson, i) => {
+                                        const key = `lesson-${subject}-${chapter.id}-${lesson.id}`;
+                                        const isDone = completed[key];
+                                        return (
+                                            <Link
+                                                key={lesson.id}
+                                                href={`/learn/${subject}/${chapter.id}/${lesson.id}`}
+                                                className={`flex items-center gap-4 rounded-xl border px-5 py-4 transition-all group ${isDone
+                                                    ? "border-green-200 bg-green-50 hover:border-green-400"
+                                                    : "border-gray-200 bg-white hover:border-green-400"
+                                                    }`}
+                                            >
+                                                <span className={`text-sm font-medium w-6 ${isDone ? "text-green-500" : "text-gray-300"}`}>
+                                                    {isDone ? "✓" : i + 1}
+                                                </span>
+                                                <span className={`transition-colors ${isDone ? "text-green-700" : "text-gray-800 group-hover:text-green-700"}`}>
+                                                    {lesson.title}
+                                                </span>
+                                            </Link>
+                                        );
+                                    })}
+                                </div>
                             </div>
-                        </div>
-                    ))}
+                        );
+                    })}
                 </div>
             </main>
         </div>
