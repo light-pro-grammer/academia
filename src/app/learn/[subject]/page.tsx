@@ -66,6 +66,7 @@ const curriculum: Record<string, {
                 title: "Множення",
                 lessons: [
                     { id: "01-what-is-multiplication", title: "Що таке множення?" },
+                    { id: "02-multiplication-by-2", title: "Таблиця множення на 2" },
                 ],
             },
         ],

@@ -54,6 +54,7 @@ const curriculum: Record<string, Record<string, {
       subject: "Математика",
       lessons: [
         { id: "01-what-is-multiplication", title: "Що таке множення?" },
+        { id: "02-multiplication-by-2", title: "Таблиця множення на 2" },
       ],
     },
   },
