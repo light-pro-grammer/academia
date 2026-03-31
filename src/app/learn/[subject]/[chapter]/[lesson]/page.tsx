@@ -31,6 +31,7 @@ const curriculum: Record<string, Record<string, {
         { id: "01-what-is-addition", title: "Що таке додавання?" },
         { id: "02-addition-to-10", title: "Додавання в межах 10" },
         { id: "03-addition-to-20", title: "Додавання в межах 20" },
+        { id: "04-addition-two-digit", title: "Додавання двозначних чисел" },
       ],
     },
   },
