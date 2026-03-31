@@ -46,6 +46,7 @@ const curriculum: Record<string, Record<string, {
         { id: "03-subtraction-to-20", title: "Віднімання в межах 20" },
         { id: "04-subtraction-two-digit", title: "Віднімання двозначних чисел" },
         { id: "05-subtraction-problems", title: "Задачі на віднімання" },
+        { id: "06-addition-subtraction-connection", title: "Зв'язок додавання і віднімання" },
       ],
     },
   },
