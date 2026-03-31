@@ -33,6 +33,7 @@ const curriculum: Record<string, Record<string, {
         { id: "03-addition-to-20", title: "Додавання в межах 20" },
         { id: "04-addition-two-digit", title: "Додавання двозначних чисел" },
         { id: "05-addition-problems", title: "Задачі на додавання" },
+        { id: "06-addition-properties", title: "Властивості додавання" },
       ],
     },
   },
