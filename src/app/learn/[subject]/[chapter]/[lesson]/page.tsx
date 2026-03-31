@@ -93,6 +93,13 @@ const curriculum: Record<string, Record<string, {
         { id: "08-fractions-review", title: "Повторення: Дроби" },
       ],
     },
+    "7-decimals": {
+      subject: "Математика",
+      lessons: [
+        { id: "01-what-is-decimal", title: "Що таке десятковий дріб?" },
+        { id: "02-comparing-decimals", title: "Порівняння десяткових дробів" },
+      ],
+    },
   },
 };
 
