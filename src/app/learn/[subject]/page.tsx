@@ -29,6 +29,7 @@ const curriculum: Record<string, {
           { id: "09-number-composition", title: "Склад числа" },
           { id: "10-tens-and-units", title: "Десятки і одиниці" },
           { id: "11-skip-counting", title: "Лічба двійками, п'ятірками, десятками" },
+          { id: "12-number-line-visual", title: "Число на числовій прямій" },
         ],
       },
     ],
