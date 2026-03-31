@@ -107,6 +107,13 @@ const curriculum: Record<string, SubjectData> = {
                     { id: "07-division-review", title: "Повторення: Ділення" },
                 ],
             },
+            {
+                id: "6-fractions",
+                title: "Дроби",
+                lessons: [
+                    { id: "01-what-is-fraction", title: "Що таке дріб?" },
+                ],
+            },
         ],
     },
 };

@@ -80,6 +80,12 @@ const curriculum: Record<string, Record<string, {
         { id: "07-division-review", title: "Повторення: Ділення" },
       ],
     },
+    "6-fractions": {
+      subject: "Математика",
+      lessons: [
+        { id: "01-what-is-fraction", title: "Що таке дріб?" },
+      ],
+    },
   },
 };
 
