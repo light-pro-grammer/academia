@@ -48,6 +48,13 @@ const curriculum: Record<string, {
                     { id: "08-addition-review", title: "Повторення: Додавання" },
                 ],
             },
+            {
+                id: "3-subtraction",
+                title: "Віднімання",
+                lessons: [
+                    { id: "01-what-is-subtraction", title: "Що таке віднімання?" },
+                ],
+            },
         ],
     },
 };
