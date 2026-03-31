@@ -25,6 +25,12 @@ const curriculum: Record<string, Record<string, {
         { id: "14-review", title: "Повторення і перевірка знань" },
       ],
     },
+    "2-addition": {
+      subject: "Математика",
+      lessons: [
+        { id: "01-what-is-addition", title: "Що таке додавання?" },
+      ],
+    },
   },
 };
 
