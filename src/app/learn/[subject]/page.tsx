@@ -58,6 +58,7 @@ const curriculum: Record<string, {
                     { id: "04-subtraction-two-digit", title: "Віднімання двозначних чисел" },
                     { id: "05-subtraction-problems", title: "Задачі на віднімання" },
                     { id: "06-addition-subtraction-connection", title: "Зв'язок додавання і віднімання" },
+                    { id: "07-subtraction-review", title: "Повторення: Віднімання" },
                 ],
             },
         ],
