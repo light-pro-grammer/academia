@@ -26,6 +26,8 @@ const curriculum: Record<string, {
           { id: "06-even-odd-numbers", title: "Парні та непарні числа" },
           { id: "07-zero", title: "Число 0 — що це таке?" },
           { id: "08-number-line", title: "Місце числа в ряду" },
+          { id: "09-number-composition", title: "Склад числа" },
+          { id: "10-tens-and-units", title: "Десятки і одиниці" },
         ],
       },
     ],
