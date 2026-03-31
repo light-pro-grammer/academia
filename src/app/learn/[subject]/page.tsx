@@ -127,6 +127,9 @@ const curriculum: Record<string, SubjectData> = {
                 lessons: [
                     { id: "01-what-is-decimal", title: "Що таке десятковий дріб?" },
                     { id: "02-comparing-decimals", title: "Порівняння десяткових дробів" },
+                    { id: "03-adding-decimals", title: "Додавання десяткових дробів" },
+                    { id: "04-subtracting-decimals", title: "Віднімання десяткових дробів" },
+                    { id: "05-multiplying-decimals", title: "Множення десяткових дробів" },
                 ],
             },
         ],
