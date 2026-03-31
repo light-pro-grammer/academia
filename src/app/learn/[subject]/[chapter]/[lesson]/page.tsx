@@ -65,6 +65,13 @@ const curriculum: Record<string, Record<string, {
         { id: "10-multiplication-by-10", title: "Таблиця множення на 10" },
         { id: "11-multiplication-table", title: "Повна таблиця множення" },
         { id: "12-multiplication-problems", title: "Задачі на множення" },
+        { id: "13-multiplication-review", title: "Повторення: Множення" },
+      ],
+    },
+    "5-division": {
+      subject: "Математика",
+      lessons: [
+        { id: "01-what-is-division", title: "Що таке ділення?" },
       ],
     },
   },
