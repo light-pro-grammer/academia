@@ -11,6 +11,7 @@ const curriculum: Record<string, Record<string, {
       lessons: [
         { id: "01-counting-1-10", title: "Числа від 1 до 10" },
         { id: "02-counting-11-20", title: "Числа від 11 до 20" },
+        { id: "03-counting-20-100", title: "Числа від 20 до 100" },
       ],
     },
   },
