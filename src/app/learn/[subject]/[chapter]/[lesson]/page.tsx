@@ -64,6 +64,7 @@ const curriculum: Record<string, Record<string, {
         { id: "09-multiplication-by-9", title: "Таблиця множення на 9" },
         { id: "10-multiplication-by-10", title: "Таблиця множення на 10" },
         { id: "11-multiplication-table", title: "Повна таблиця множення" },
+        { id: "12-multiplication-problems", title: "Задачі на множення" },
       ],
     },
   },
