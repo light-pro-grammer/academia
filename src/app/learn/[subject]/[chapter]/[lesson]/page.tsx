@@ -35,6 +35,7 @@ const curriculum: Record<string, Record<string, {
         { id: "05-addition-problems", title: "Задачі на додавання" },
         { id: "06-addition-properties", title: "Властивості додавання" },
         { id: "07-checking-addition", title: "Перевірка додавання" },
+        { id: "08-addition-review", title: "Повторення: Додавання" },
       ],
     },
   },
