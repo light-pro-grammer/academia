@@ -117,6 +117,7 @@ const curriculum: Record<string, Record<string, {
         { id: "06-perimeter", title: "Периметр" },
         { id: "07-area", title: "Площа" },
         { id: "08-volume", title: "Об'єм" },
+        { id: "09-geometry-review", title: "Повторення: Геометрія" },
       ],
     },
   },
