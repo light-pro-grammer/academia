@@ -150,6 +150,12 @@ const curriculum: Record<string, Record<string, {
         { id: "04-powers-roots-review", title: "Повторення: Степені і корені" },
       ],
     },
+    "12-ratios": {
+      subject: "Математика",
+      lessons: [
+        { id: "01-ratios", title: "Відношення" },
+      ],
+    },
   },
 };
 
