@@ -150,6 +150,14 @@ const curriculum: Record<string, SubjectData> = {
                     { id: "09-geometry-review", title: "Повторення: Геометрія" },
                 ],
             },
+            {
+                id: "9-percentages",
+                title: "Відсотки",
+                lessons: [
+                    { id: "01-what-is-percentage", title: "Що таке відсоток?" },
+                    { id: "02-finding-percentage", title: "Знаходження відсотка від числа" },
+                ],
+            },
         ],
     },
 };
