@@ -174,6 +174,12 @@ const curriculum: Record<string, Record<string, {
         { id: "02-systems-of-inequalities", title: "Системи нерівностей" },
       ],
     },
+    "15-functions-intro": {
+      subject: "Математика",
+      lessons: [
+        { id: "01-what-is-function", title: "Що таке функція?" },
+      ],
+    },
   },
 };
 

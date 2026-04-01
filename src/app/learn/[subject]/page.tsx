@@ -230,7 +230,9 @@ const curriculum: Record<string, SubjectData> = {
                     {
                         id: "15-functions-intro",
                         title: "Функції — введення",
-                        lessons: [],
+                        lessons: [
+                            { id: "01-what-is-function", title: "Що таке функція?" },
+                        ],
                     },
                     {
                         id: "16-linear-function",
