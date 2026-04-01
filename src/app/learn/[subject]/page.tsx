@@ -239,7 +239,9 @@ const curriculum: Record<string, SubjectData> = {
                     {
                         id: "16-linear-function",
                         title: "Лінійна функція",
-                        lessons: [],
+                        lessons: [
+                            { id: "01-linear-function", title: "Лінійна функція" },
+                        ],
                     },
                     {
                         id: "17-systems",

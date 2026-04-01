@@ -182,6 +182,12 @@ const curriculum: Record<string, Record<string, {
         { id: "03-functions-review", title: "Повторення: Функції" },
       ],
     },
+    "16-linear-function": {
+      subject: "Математика",
+      lessons: [
+        { id: "01-linear-function", title: "Лінійна функція" },
+      ],
+    },
   },
 };
 
