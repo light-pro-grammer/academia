@@ -220,14 +220,11 @@ const curriculum: Record<string, SubjectData> = {
                         ],
                     },
                     {
-                        id: "13-equations",
-                        title: "Рівняння першого ступеня",
-                        lessons: [],
-                    },
-                    {
                         id: "14-inequalities",
                         title: "Нерівності",
-                        lessons: [],
+                        lessons: [
+                            { id: "01-what-is-inequality", title: "Що таке нерівність?" },
+                        ],
                     },
                     {
                         id: "15-functions-intro",

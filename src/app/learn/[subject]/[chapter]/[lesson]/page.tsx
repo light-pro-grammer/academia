@@ -167,6 +167,12 @@ const curriculum: Record<string, Record<string, {
         { id: "04-equations-review", title: "Повторення: Рівняння першого ступеня" },
       ],
     },
+    "14-inequalities": {
+      subject: "Математика",
+      lessons: [
+        { id: "01-what-is-inequality", title: "Що таке нерівність?" },
+      ],
+    },
   },
 };
 
