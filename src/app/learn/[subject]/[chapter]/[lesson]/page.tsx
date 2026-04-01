@@ -179,6 +179,7 @@ const curriculum: Record<string, Record<string, {
       lessons: [
         { id: "01-what-is-function", title: "Що таке функція?" },
         { id: "02-function-graph", title: "Графік функції" },
+        { id: "03-functions-review", title: "Повторення: Функції" },
       ],
     },
   },
