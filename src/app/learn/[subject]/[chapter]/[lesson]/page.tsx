@@ -186,6 +186,21 @@ const curriculum: Record<string, Record<string, {
       subject: "Математика",
       lessons: [
         { id: "01-linear-function", title: "Лінійна функція" },
+        { id: "02-linear-systems", title: "Системи лінійних рівнянь" },
+        { id: "03-linear-function-review", title: "Повторення: Лінійна функція" },
+      ],
+    },
+    "17-systems": {
+      subject: "Математика",
+      lessons: [
+        { id: "01-systems-two-equations", title: "Системи двох рівнянь" },
+        { id: "02-systems-three-equations", title: "Системи трьох рівнянь" },
+      ],
+    },
+    "18-quadratic": {
+      subject: "Математика",
+      lessons: [
+        { id: "01-what-is-quadratic", title: "Квадратне рівняння" },
       ],
     },
   },
