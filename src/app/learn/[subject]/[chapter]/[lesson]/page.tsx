@@ -155,6 +155,7 @@ const curriculum: Record<string, Record<string, {
       lessons: [
         { id: "01-ratios", title: "Відношення" },
         { id: "02-proportions", title: "Пропорції" },
+        { id: "03-ratios-review", title: "Повторення: Пропорції і відношення" },
       ],
     },
   },
