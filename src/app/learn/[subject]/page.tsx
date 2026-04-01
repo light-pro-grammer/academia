@@ -184,6 +184,10 @@ const curriculum: Record<string, SubjectData> = {
                         title: "Від'ємні числа",
                         lessons: [
                             { id: "01-what-is-negative", title: "Що таке від'ємні числа?" },
+                            { id: "02-adding-subtracting-negatives", title: "Додавання і віднімання від'ємних чисел" },
+                            { id: "03-multiplying-dividing-negatives", title: "Множення і ділення від'ємних чисел" },
+                            { id: "04-coordinate-plane", title: "Координатна пряма і площина" },
+                            { id: "05-negative-numbers-review", title: "Повторення: Від'ємні числа" },
                         ],
                     },
                     {
