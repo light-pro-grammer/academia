@@ -214,6 +214,7 @@ const curriculum: Record<string, SubjectData> = {
                         title: "Рівняння першого ступеня",
                         lessons: [
                             { id: "01-what-is-equation", title: "Що таке рівняння?" },
+                            { id: "02-equations-brackets-fractions", title: "Рівняння з дужками і дробами" },
                         ],
                     },
                     {

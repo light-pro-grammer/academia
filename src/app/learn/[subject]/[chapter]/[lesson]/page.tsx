@@ -162,6 +162,7 @@ const curriculum: Record<string, Record<string, {
       subject: "Математика",
       lessons: [
         { id: "01-what-is-equation", title: "Що таке рівняння?" },
+        { id: "02-equations-brackets-fractions", title: "Рівняння з дужками і дробами" },
       ],
     },
   },
