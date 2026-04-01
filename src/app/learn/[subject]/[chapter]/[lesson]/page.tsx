@@ -147,6 +147,7 @@ const curriculum: Record<string, Record<string, {
         { id: "01-powers", title: "Степені" },
         { id: "02-roots", title: "Корені" },
         { id: "03-scientific-notation", title: "Наукова нотація" },
+        { id: "04-powers-roots-review", title: "Повторення: Степені і корені" },
       ],
     },
   },
