@@ -146,6 +146,7 @@ const curriculum: Record<string, Record<string, {
       lessons: [
         { id: "01-powers", title: "Степені" },
         { id: "02-roots", title: "Корені" },
+        { id: "03-scientific-notation", title: "Наукова нотація" },
       ],
     },
   },
