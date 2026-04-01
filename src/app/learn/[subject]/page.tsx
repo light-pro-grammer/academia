@@ -166,6 +166,10 @@ const curriculum: Record<string, SubjectData> = {
                         lessons: [
                             { id: "01-what-is-percentage", title: "Що таке відсоток?" },
                             { id: "02-finding-percentage", title: "Знаходження відсотка від числа" },
+                            { id: "03-finding-number-by-percentage", title: "Знаходження числа за відсотком" },
+                            { id: "04-percentage-ratio", title: "Знаходження відсоткового відношення" },
+                            { id: "05-percentages-in-finance", title: "Відсотки у фінансах" },
+                            { id: "06-percentages-review", title: "Повторення: Відсотки" },
                         ],
                     },
                 ],
@@ -174,7 +178,75 @@ const curriculum: Record<string, SubjectData> = {
                 id: "middle",
                 title: "Рівень 2 — Середня школа",
                 description: "Від'ємні числа, рівняння, функції, ймовірність",
-                chapters: [],
+                chapters: [
+                    {
+                        id: "10-negative-numbers",
+                        title: "Від'ємні числа",
+                        lessons: [
+                            { id: "01-what-is-negative", title: "Що таке від'ємні числа?" },
+                        ],
+                    },
+                    {
+                        id: "11-powers-roots",
+                        title: "Степені і корені",
+                        lessons: [],
+                    },
+                    {
+                        id: "12-ratios",
+                        title: "Пропорції і відношення",
+                        lessons: [],
+                    },
+                    {
+                        id: "13-equations",
+                        title: "Рівняння першого ступеня",
+                        lessons: [],
+                    },
+                    {
+                        id: "14-inequalities",
+                        title: "Нерівності",
+                        lessons: [],
+                    },
+                    {
+                        id: "15-functions-intro",
+                        title: "Функції — введення",
+                        lessons: [],
+                    },
+                    {
+                        id: "16-linear-function",
+                        title: "Лінійна функція",
+                        lessons: [],
+                    },
+                    {
+                        id: "17-systems",
+                        title: "Системи рівнянь",
+                        lessons: [],
+                    },
+                    {
+                        id: "18-quadratic",
+                        title: "Квадратні рівняння",
+                        lessons: [],
+                    },
+                    {
+                        id: "19-quadratic-function",
+                        title: "Квадратична функція",
+                        lessons: [],
+                    },
+                    {
+                        id: "20-combinatorics",
+                        title: "Комбінаторика",
+                        lessons: [],
+                    },
+                    {
+                        id: "21-probability",
+                        title: "Теорія ймовірностей",
+                        lessons: [],
+                    },
+                    {
+                        id: "22-statistics",
+                        title: "Статистика",
+                        lessons: [],
+                    },
+                ],
             },
             {
                 id: "advanced",
@@ -311,8 +383,8 @@ export default function SubjectPage({ params }: { params: Promise<{ subject: str
                                                                     key={lesson.id}
                                                                     href={`/learn/${subject}/${chapter.id}/${lesson.id}`}
                                                                     className={`flex items-center gap-3 rounded-lg border px-4 py-3 transition-all group text-sm ${isDone
-                                                                            ? "border-green-200 bg-green-50 hover:border-green-400"
-                                                                            : "border-gray-100 bg-gray-50 hover:border-green-300 hover:bg-white"
+                                                                        ? "border-green-200 bg-green-50 hover:border-green-400"
+                                                                        : "border-gray-100 bg-gray-50 hover:border-green-300 hover:bg-white"
                                                                         }`}
                                                                 >
                                                                     <span className={`font-medium w-5 shrink-0 ${isDone ? "text-green-500" : "text-gray-300"}`}>

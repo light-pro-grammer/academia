@@ -125,6 +125,16 @@ const curriculum: Record<string, Record<string, {
       lessons: [
         { id: "01-what-is-percentage", title: "Що таке відсоток?" },
         { id: "02-finding-percentage", title: "Знаходження відсотка від числа" },
+        { id: "03-finding-number-by-percentage", title: "Знаходження числа за відсотком" },
+        { id: "04-percentage-ratio", title: "Знаходження відсоткового відношення" },
+        { id: "05-percentages-in-finance", title: "Відсотки у фінансах" },
+        { id: "06-percentages-review", title: "Повторення: Відсотки" },
+      ],
+    },
+    "10-negative-numbers": {
+      subject: "Математика",
+      lessons: [
+        { id: "01-what-is-negative", title: "Що таке від'ємні числа?" },
       ],
     },
   },
