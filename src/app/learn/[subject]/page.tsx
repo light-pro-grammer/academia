@@ -195,6 +195,7 @@ const curriculum: Record<string, SubjectData> = {
                         title: "Степені і корені",
                         lessons: [
                             { id: "01-powers", title: "Степені" },
+                            { id: "02-roots", title: "Корені" },
                         ],
                     },
                     {
