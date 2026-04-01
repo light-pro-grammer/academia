@@ -224,6 +224,7 @@ const curriculum: Record<string, SubjectData> = {
                         title: "Нерівності",
                         lessons: [
                             { id: "01-what-is-inequality", title: "Що таке нерівність?" },
+                            { id: "02-systems-of-inequalities", title: "Системи нерівностей" },
                         ],
                     },
                     {

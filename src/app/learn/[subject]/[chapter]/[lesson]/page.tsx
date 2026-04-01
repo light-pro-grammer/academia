@@ -171,6 +171,7 @@ const curriculum: Record<string, Record<string, {
       subject: "Математика",
       lessons: [
         { id: "01-what-is-inequality", title: "Що таке нерівність?" },
+        { id: "02-systems-of-inequalities", title: "Системи нерівностей" },
       ],
     },
   },
