@@ -158,6 +158,12 @@ const curriculum: Record<string, Record<string, {
         { id: "03-ratios-review", title: "Повторення: Пропорції і відношення" },
       ],
     },
+    "13-equations": {
+      subject: "Математика",
+      lessons: [
+        { id: "01-what-is-equation", title: "Що таке рівняння?" },
+      ],
+    },
   },
 };
 

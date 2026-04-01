@@ -212,6 +212,13 @@ const curriculum: Record<string, SubjectData> = {
                     {
                         id: "13-equations",
                         title: "Рівняння першого ступеня",
+                        lessons: [
+                            { id: "01-what-is-equation", title: "Що таке рівняння?" },
+                        ],
+                    },
+                    {
+                        id: "13-equations",
+                        title: "Рівняння першого ступеня",
                         lessons: [],
                     },
                     {
