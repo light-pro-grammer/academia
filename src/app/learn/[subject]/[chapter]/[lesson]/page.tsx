@@ -141,6 +141,12 @@ const curriculum: Record<string, Record<string, {
         { id: "05-negative-numbers-review", title: "Повторення: Від'ємні числа" },
       ],
     },
+    "11-powers-roots": {
+      subject: "Математика",
+      lessons: [
+        { id: "01-powers", title: "Степені" },
+      ],
+    },
   },
 };
 
