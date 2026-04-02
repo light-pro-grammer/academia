@@ -1,66 +1,62 @@
 import Link from "next/link";
-
-const subjects = [
-  { id: "math", title: "Математика", desc: "Числа, арифметика, геометрія, алгебра", emoji: "🔢", ready: true },
-  { id: "physics", title: "Фізика", desc: "Механіка, електрика, оптика", emoji: "⚡", ready: false },
-  { id: "chemistry", title: "Хімія", desc: "Атоми, молекули, реакції", emoji: "🧪", ready: false },
-  { id: "biology", title: "Біологія", desc: "Клітини, організми, еволюція", emoji: "🌿", ready: false },
-  { id: "history", title: "Історія", desc: "Україна і світ від давнини до сьогодні", emoji: "📜", ready: false },
-  { id: "english", title: "Англійська", desc: "Алфавіт, граматика, розмова", emoji: "🇬🇧", ready: false },
-];
+import { subjects } from "@/data/subjects";
 
 export default function Home() {
   return (
     <div className="min-h-screen bg-gray-50">
-      <header className="bg-white border-b border-gray-200 px-6 py-4">
-        <div className="max-w-4xl mx-auto flex items-center justify-between">
-          <span className="text-xl font-semibold text-gray-900">Академія Знань</span>
-          <span className="text-sm text-gray-400">Безкоштовно · Українською</span>
+      {/* Header */}
+      <header className="bg-white border-b border-gray-200">
+        <div className="max-w-5xl mx-auto px-6 py-5 flex items-center justify-between">
+          <div className="flex items-center gap-3">
+            <div className="w-8 h-8 rounded-lg bg-violet-600 flex items-center justify-center">
+              <span className="text-white text-sm font-bold">А</span>
+            </div>
+            <span className="text-lg font-semibold text-gray-900">Академія Знань</span>
+          </div>
         </div>
       </header>
 
-      <main className="max-w-4xl mx-auto px-6 py-16">
-        <div className="mb-14">
-          <h1 className="text-4xl font-semibold text-gray-900 mb-4">
-            Вчись всьому.<br />З нуля до майстра.
+      <main className="max-w-5xl mx-auto px-6 py-14">
+        {/* Hero */}
+        <div className="mb-14 text-center">
+          <h1 className="text-4xl font-bold text-gray-900 mb-4">
+            Навчайся безкоштовно
           </h1>
-          <p className="text-lg text-gray-500 max-w-xl">
-            Безкоштовна освітня платформа українською мовою. Математика, фізика, хімія, біологія, історія — з поясненнями, інтерактивними вправами і перевіркою знань.
+          <p className="text-xl text-gray-500 max-w-2xl mx-auto">
+            Повний курс від основ арифметики до університетської математики,
+            фізики, хімії та інших наук. Українською мовою.
           </p>
         </div>
 
-        <h2 className="text-sm font-medium uppercase tracking-widest text-gray-400 mb-6">
-          Предмети
-        </h2>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          {subjects.map((s) => (
-            s.ready ? (
+        {/* Subjects grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          {subjects.map(subject => {
+            const hasContent = subject.courses.some(c => c.sections.length > 0);
+            return (
               <Link
-                key={s.id}
-                href={`/learn/${s.id}`}
-                className="flex items-start gap-4 rounded-xl border border-gray-200 bg-white px-5 py-4 hover:border-green-400 hover:shadow-sm transition-all group"
+                key={subject.id}
+                href={hasContent ? `/learn/${subject.id}` : "#"}
+                className={`group rounded-2xl border bg-white p-6 transition-all ${
+                  hasContent
+                    ? "border-gray-200 hover:border-violet-300 hover:shadow-md cursor-pointer"
+                    : "border-gray-100 opacity-50 cursor-not-allowed"
+                }`}
               >
-                <span className="text-3xl">{s.emoji}</span>
-                <div>
-                  <p className="font-medium text-gray-900 group-hover:text-green-700 transition-colors">{s.title}</p>
-                  <p className="text-sm text-gray-400 mt-0.5">{s.desc}</p>
-                </div>
+                <div className="text-4xl mb-3">{subject.emoji}</div>
+                <h2 className="text-lg font-semibold text-gray-900 mb-1 group-hover:text-violet-700 transition-colors">
+                  {subject.title}
+                </h2>
+                <p className="text-sm text-gray-500 leading-relaxed">
+                  {subject.description}
+                </p>
+                {!hasContent && (
+                  <span className="mt-3 inline-block text-xs text-gray-400 border border-gray-200 rounded-full px-3 py-1">
+                    Незабаром
+                  </span>
+                )}
               </Link>
-            ) : (
-              <div
-                key={s.id}
-                className="flex items-start gap-4 rounded-xl border border-gray-100 bg-gray-50 px-5 py-4 opacity-60 cursor-not-allowed"
-              >
-                <span className="text-3xl grayscale">{s.emoji}</span>
-                <div>
-                  <p className="font-medium text-gray-500">{s.title}</p>
-                  <p className="text-sm text-gray-400 mt-0.5">{s.desc}</p>
-                  <span className="text-xs text-gray-400 mt-1 inline-block">Незабаром</span>
-                </div>
-              </div>
-            )
-          ))}
+            );
+          })}
         </div>
       </main>
     </div>

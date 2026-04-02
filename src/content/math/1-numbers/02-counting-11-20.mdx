@@ -1,69 +1,1188 @@
 export const meta = {
-  title: "Числа від 11 до 20",
+  title: "Додавання в межах 10",
   subject: "Математика",
-  chapter: "Числа і лічба",
+  chapter: "Додавання",
+  level: "beginner",
+  estimatedTime: "40 хвилин",
+  prerequisites: ["Числа від 1 до 10", "Рахунок предметів"],
 };
 
 import Quiz from "@/components/lessons/Quiz";
-import NumberTable from "@/components/lessons/NumberTable";
+import SimpleTable from "@/components/lessons/SimpleTable";
 
-## Що таке числа від 11 до 20?
+{/* ============================================================
+    ВСТУП
+    ============================================================ */}
 
-Ти вже знаєш числа від 1 до 10. Тепер підемо далі!
+Уяви, що ти збираєш яблука. У лівій руці — **3 яблука**, у правій — **4 яблука**. Скільки яблук у тебе разом? Щоб дізнатися — треба **додати**. Саме це ми сьогодні навчимося робити!
 
-Числа від 11 до 20 — це числа, які йдуть **після десяти**. Уяви, що ти порахував усі пальці на руках — це 10. А тепер починаєш рахувати далі: **одинадцять, дванадцять...**
+---
 
-## Як читаються ці числа?
+## Що таке додавання?
 
-<NumberTable start={11} />
+**Додавання** — це коли ми об'єднуємо дві групи предметів в одну і рахуємо, скільки їх вийшло разом.
 
-## Секрет цих чисел
+<div className="concept-box">
 
-Кожне число від 11 до 19 складається з **десяти** і ще кількох одиниць:
+**Знак додавання** виглядає так: **+** (плюс)
 
-- 11 = 10 + 1
-- 12 = 10 + 2
-- 13 = 10 + 3
-- 14 = 10 + 4
-- 15 = 10 + 5
+**Знак рівності** виглядає так: **=** (дорівнює)
 
-А число **20** — це два десятки: 10 + 10.
+Запис **3 + 4 = 7** читається: «три плюс чотири дорівнює сім»
 
-## Порядок чисел
+</div>
 
-Числа йдуть по порядку — кожне наступне на **один більше**:
+Учасники додавання мають свої назви:
 
-**11 → 12 → 13 → 14 → 15 → 16 → 17 → 18 → 19 → 20**
+<div dangerouslySetInnerHTML={{__html: `
+<div style="font-family: 'Georgia', serif; margin: 2rem 0; overflow-x: auto;">
+  <svg viewBox="0 0 560 130" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:560px;display:block;margin:0 auto;">
+    <!-- Numbers -->
+    <text x="80" y="75" text-anchor="middle" font-size="52" font-weight="bold" fill="#1a1a2e">3</text>
+    <text x="200" y="75" text-anchor="middle" font-size="52" font-weight="bold" fill="#e63946">+</text>
+    <text x="320" y="75" text-anchor="middle" font-size="52" font-weight="bold" fill="#1a1a2e">4</text>
+    <text x="420" y="75" text-anchor="middle" font-size="52" font-weight="bold" fill="#457b9d">=</text>
+    <text x="510" y="75" text-anchor="middle" font-size="52" font-weight="bold" fill="#2a9d8f">7</text>
+    <!-- Labels -->
+    <text x="80" y="112" text-anchor="middle" font-size="13" fill="#666">перший</text>
+    <text x="80" y="127" text-anchor="middle" font-size="13" fill="#666">доданок</text>
+    <text x="320" y="112" text-anchor="middle" font-size="13" fill="#666">другий</text>
+    <text x="320" y="127" text-anchor="middle" font-size="13" fill="#666">доданок</text>
+    <text x="510" y="112" text-anchor="middle" font-size="13" fill="#2a9d8f">сума</text>
+    <!-- Arrows -->
+    <line x1="80" y1="82" x2="80" y2="100" stroke="#999" stroke-width="1.5" marker-end="url(#arr)"/>
+    <line x1="320" y1="82" x2="320" y2="100" stroke="#999" stroke-width="1.5" marker-end="url(#arr)"/>
+    <line x1="510" y1="82" x2="510" y2="100" stroke="#2a9d8f" stroke-width="1.5" marker-end="url(#arr2)"/>
+    <defs>
+      <marker id="arr" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
+        <path d="M0,0 L6,3 L0,6 Z" fill="#999"/>
+      </marker>
+      <marker id="arr2" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
+        <path d="M0,0 L6,3 L0,6 Z" fill="#2a9d8f"/>
+      </marker>
+    </defs>
+  </svg>
+</div>
+`}} />
+
+> **Запам'ятай:** у будь-якому прикладі на додавання є два **доданки** і **сума** — результат.
+
+---
+
+## Як уявити додавання: числова пряма
+
+Числова пряма — це дуже зручний інструмент. Ми «стрибаємо» по ній вперед, коли додаємо.
+
+**Приклад: 2 + 5 = ?**
+
+Починаємо на числі **2**, робимо **5 стрибків** вправо — і приземляємося на **7**.
+
+<div dangerouslySetInnerHTML={{__html: `
+<div style="margin: 1.5rem 0; overflow-x: auto;">
+<svg viewBox="0 0 580 110" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:580px;display:block;margin:0 auto;">
+  <defs>
+    <marker id="arrowBlue" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#3a86ff"/>
+    </marker>
+    <marker id="arrowMain" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#333"/>
+    </marker>
+  </defs>
+
+  <!-- Number line -->
+  <line x1="30" y1="65" x2="560" y2="65" stroke="#333" stroke-width="2.5" marker-end="url(#arrowMain)"/>
+
+  <!-- Ticks and numbers 0-10 -->
+  <line x1="40"  y1="58" x2="40"  y2="72" stroke="#333" stroke-width="2"/>
+  <line x1="90"  y1="58" x2="90"  y2="72" stroke="#333" stroke-width="2"/>
+  <line x1="140" y1="58" x2="140" y2="72" stroke="#333" stroke-width="2"/>
+  <line x1="190" y1="58" x2="190" y2="72" stroke="#333" stroke-width="2"/>
+  <line x1="240" y1="58" x2="240" y2="72" stroke="#333" stroke-width="2"/>
+  <line x1="290" y1="58" x2="290" y2="72" stroke="#333" stroke-width="2"/>
+  <line x1="340" y1="58" x2="340" y2="72" stroke="#333" stroke-width="2"/>
+  <line x1="390" y1="58" x2="390" y2="72" stroke="#333" stroke-width="2"/>
+  <line x1="440" y1="58" x2="440" y2="72" stroke="#333" stroke-width="2"/>
+  <line x1="490" y1="58" x2="490" y2="72" stroke="#333" stroke-width="2"/>
+  <line x1="540" y1="58" x2="540" y2="72" stroke="#333" stroke-width="2"/>
+
+  <text x="40"  y="90" text-anchor="middle" font-size="14" fill="#333">0</text>
+  <text x="90"  y="90" text-anchor="middle" font-size="14" fill="#333">1</text>
+  <text x="140" y="90" text-anchor="middle" font-size="14" fill="#e63946" font-weight="bold">2</text>
+  <text x="190" y="90" text-anchor="middle" font-size="14" fill="#333">3</text>
+  <text x="240" y="90" text-anchor="middle" font-size="14" fill="#333">4</text>
+  <text x="290" y="90" text-anchor="middle" font-size="14" fill="#333">5</text>
+  <text x="340" y="90" text-anchor="middle" font-size="14" fill="#333">6</text>
+  <text x="390" y="90" text-anchor="middle" font-size="14" fill="#2a9d8f" font-weight="bold">7</text>
+  <text x="440" y="90" text-anchor="middle" font-size="14" fill="#333">8</text>
+  <text x="490" y="90" text-anchor="middle" font-size="14" fill="#333">9</text>
+  <text x="540" y="90" text-anchor="middle" font-size="14" fill="#333">10</text>
+
+  <!-- Starting dot -->
+  <circle cx="140" cy="65" r="7" fill="#e63946"/>
+
+  <!-- 5 jumps arcs -->
+  <path d="M140,65 Q165,30 190,65" fill="none" stroke="#3a86ff" stroke-width="2.5" marker-end="url(#arrowBlue)"/>
+  <path d="M190,65 Q215,30 240,65" fill="none" stroke="#3a86ff" stroke-width="2.5" marker-end="url(#arrowBlue)"/>
+  <path d="M240,65 Q265,30 290,65" fill="none" stroke="#3a86ff" stroke-width="2.5" marker-end="url(#arrowBlue)"/>
+  <path d="M290,65 Q315,30 340,65" fill="none" stroke="#3a86ff" stroke-width="2.5" marker-end="url(#arrowBlue)"/>
+  <path d="M340,65 Q365,30 390,65" fill="none" stroke="#3a86ff" stroke-width="2.5" marker-end="url(#arrowBlue)"/>
+
+  <!-- Jump labels -->
+  <text x="165" y="24" text-anchor="middle" font-size="11" fill="#3a86ff">+1</text>
+  <text x="215" y="24" text-anchor="middle" font-size="11" fill="#3a86ff">+1</text>
+  <text x="265" y="24" text-anchor="middle" font-size="11" fill="#3a86ff">+1</text>
+  <text x="315" y="24" text-anchor="middle" font-size="11" fill="#3a86ff">+1</text>
+  <text x="365" y="24" text-anchor="middle" font-size="11" fill="#3a86ff">+1</text>
+
+  <!-- End dot -->
+  <circle cx="390" cy="65" r="7" fill="#2a9d8f"/>
+
+  <!-- Labels -->
+  <text x="140" y="14" text-anchor="middle" font-size="12" fill="#e63946" font-weight="bold">старт (2)</text>
+  <text x="390" y="14" text-anchor="middle" font-size="12" fill="#2a9d8f" font-weight="bold">фінал (7)</text>
+</svg>
+</div>
+`}} />
+
+**2 + 5 = 7** ✓ Ми зробили 5 стрибків і дійшли до 7!
+
+---
+
+## Як уявити додавання: кубики
+
+Ще один чудовий спосіб — **кубики**. Кожна група кубиків — це один доданок. Разом — це сума.
+
+**Приклад: 3 + 4 = 7**
+
+<div dangerouslySetInnerHTML={{__html: `
+<div style="margin: 1.5rem 0;">
+<svg viewBox="0 0 500 90" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:500px;display:block;margin:0 auto;">
+  <!-- Group 1: 3 blocks -->
+  <rect x="10"  y="20" width="46" height="46" rx="8" fill="#e63946" stroke="#c1121f" stroke-width="2"/>
+  <rect x="64"  y="20" width="46" height="46" rx="8" fill="#e63946" stroke="#c1121f" stroke-width="2"/>
+  <rect x="118" y="20" width="46" height="46" rx="8" fill="#e63946" stroke="#c1121f" stroke-width="2"/>
+  <text x="33"  y="50" text-anchor="middle" font-size="22" font-weight="bold" fill="white">1</text>
+  <text x="87"  y="50" text-anchor="middle" font-size="22" font-weight="bold" fill="white">2</text>
+  <text x="141" y="50" text-anchor="middle" font-size="22" font-weight="bold" fill="white">3</text>
+  <text x="87"  y="85" text-anchor="middle" font-size="13" fill="#e63946" font-weight="bold">3 кубики</text>
+
+  <!-- Plus sign -->
+  <text x="192" y="50" text-anchor="middle" font-size="36" font-weight="bold" fill="#555">+</text>
+
+  <!-- Group 2: 4 blocks -->
+  <rect x="215" y="20" width="46" height="46" rx="8" fill="#3a86ff" stroke="#1d6fdb" stroke-width="2"/>
+  <rect x="269" y="20" width="46" height="46" rx="8" fill="#3a86ff" stroke="#1d6fdb" stroke-width="2"/>
+  <rect x="323" y="20" width="46" height="46" rx="8" fill="#3a86ff" stroke="#1d6fdb" stroke-width="2"/>
+  <rect x="377" y="20" width="46" height="46" rx="8" fill="#3a86ff" stroke="#1d6fdb" stroke-width="2"/>
+  <text x="238" y="50" text-anchor="middle" font-size="22" font-weight="bold" fill="white">1</text>
+  <text x="292" y="50" text-anchor="middle" font-size="22" font-weight="bold" fill="white">2</text>
+  <text x="346" y="50" text-anchor="middle" font-size="22" font-weight="bold" fill="white">3</text>
+  <text x="400" y="50" text-anchor="middle" font-size="22" font-weight="bold" fill="white">4</text>
+  <text x="307" y="85" text-anchor="middle" font-size="13" fill="#3a86ff" font-weight="bold">4 кубики</text>
+
+  <!-- Equals -->
+  <text x="450" y="50" text-anchor="middle" font-size="36" font-weight="bold" fill="#555">=</text>
+  <text x="487" y="50" text-anchor="middle" font-size="36" font-weight="bold" fill="#2a9d8f">7</text>
+</svg>
+</div>
+`}} />
+
+---
+
+## Як уявити додавання: яблука в кошиках
+
+<div dangerouslySetInnerHTML={{__html: `
+<div style="margin: 1.5rem 0;">
+<svg viewBox="0 0 520 160" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:520px;display:block;margin:0 auto;">
+  <!-- Basket 1 -->
+  <ellipse cx="95" cy="130" rx="65" ry="20" fill="#c9a96e" stroke="#a0784a" stroke-width="2"/>
+  <path d="M30,130 Q30,80 95,70 Q160,80 160,130 Z" fill="#e8c98a" stroke="#a0784a" stroke-width="2"/>
+  <path d="M70,70 Q95,40 120,70" fill="none" stroke="#a0784a" stroke-width="3"/>
+  <!-- Apples in basket 1 (4 apples) -->
+  <circle cx="70"  cy="105" r="16" fill="#e63946"/><text x="70"  y="110" text-anchor="middle" font-size="14">🍎</text>
+  <circle cx="100" cy="100" r="16" fill="#e63946"/><text x="100" y="105" text-anchor="middle" font-size="14">🍎</text>
+  <circle cx="130" cy="105" r="16" fill="#e63946"/><text x="130" y="110" text-anchor="middle" font-size="14">🍎</text>
+  <circle cx="85"  cy="85"  r="14" fill="#e63946"/><text x="85"  y="90"  text-anchor="middle" font-size="12">🍎</text>
+  <text x="95" y="158" text-anchor="middle" font-size="13" fill="#7b4f1e" font-weight="bold">4 яблука</text>
+
+  <!-- Plus -->
+  <text x="200" y="105" text-anchor="middle" font-size="40" font-weight="bold" fill="#555">+</text>
+
+  <!-- Basket 2 -->
+  <ellipse cx="305" cy="130" rx="65" ry="20" fill="#c9a96e" stroke="#a0784a" stroke-width="2"/>
+  <path d="M240,130 Q240,80 305,70 Q370,80 370,130 Z" fill="#e8c98a" stroke="#a0784a" stroke-width="2"/>
+  <path d="M280,70 Q305,40 330,70" fill="none" stroke="#a0784a" stroke-width="3"/>
+  <!-- Apples in basket 2 (3 apples) -->
+  <circle cx="275" cy="110" r="16" fill="#e63946"/><text x="275" y="115" text-anchor="middle" font-size="14">🍎</text>
+  <circle cx="307" cy="105" r="16" fill="#e63946"/><text x="307" y="110" text-anchor="middle" font-size="14">🍎</text>
+  <circle cx="338" cy="110" r="16" fill="#e63946"/><text x="338" y="115" text-anchor="middle" font-size="14">🍎</text>
+  <text x="305" y="158" text-anchor="middle" font-size="13" fill="#7b4f1e" font-weight="bold">3 яблука</text>
+
+  <!-- Equals and result -->
+  <text x="405" y="105" text-anchor="middle" font-size="40" font-weight="bold" fill="#555">=</text>
+  <text x="490" y="100" text-anchor="middle" font-size="48" font-weight="bold" fill="#2a9d8f">7</text>
+  <text x="490" y="125" text-anchor="middle" font-size="13" fill="#2a9d8f">яблук</text>
+</svg>
+</div>
+`}} />
+
+---
+
+{/* ============================================================
+    ІНТЕРАКТИВНА ЧИСЛОВА ПРЯМА
+    ============================================================ */}
+
+## 🎮 Спробуй сам: числова пряма
+
+Вибери два числа і подивися, як відбувається стрибок по числовій прямій!
+
+<div dangerouslySetInnerHTML={{__html: `
+<div id="numberline-app" style="
+  background: linear-gradient(135deg, #f0f7ff 0%, #e8f4fd 100%);
+  border: 2px solid #bee3f8;
+  border-radius: 16px;
+  padding: 24px;
+  margin: 1.5rem 0;
+  font-family: Georgia, serif;
+">
+  <div style="display:flex; gap:16px; align-items:center; flex-wrap:wrap; margin-bottom:20px;">
+    <div style="display:flex; align-items:center; gap:8px;">
+      <label style="font-weight:bold; font-size:15px; color:#1a1a2e;">Перший доданок:</label>
+      <select id="nl-a" style="font-size:18px; padding:6px 12px; border-radius:8px; border:2px solid #e63946; background:white; font-weight:bold; color:#e63946;">
+        <option>1</option><option>2</option><option>3</option><option selected>4</option>
+        <option>5</option><option>6</option><option>7</option><option>8</option><option>9</option>
+      </select>
+    </div>
+    <span style="font-size:28px; font-weight:bold; color:#555;">+</span>
+    <div style="display:flex; align-items:center; gap:8px;">
+      <label style="font-weight:bold; font-size:15px; color:#1a1a2e;">Другий доданок:</label>
+      <select id="nl-b" style="font-size:18px; padding:6px 12px; border-radius:8px; border:2px solid #3a86ff; background:white; font-weight:bold; color:#3a86ff;">
+        <option>1</option><option selected>2</option><option>3</option><option>4</option>
+        <option>5</option><option>6</option>
+      </select>
+    </div>
+    <button onclick="drawNumberLine()" style="
+      background: linear-gradient(135deg, #2a9d8f, #1d7269);
+      color: white; border: none; border-radius: 10px;
+      padding: 10px 22px; font-size: 16px; font-weight: bold;
+      cursor: pointer; transition: transform 0.1s;
+    " onmousedown="this.style.transform='scale(0.97)'" onmouseup="this.style.transform='scale(1)'">
+      Показати! →
+    </button>
+  </div>
+
+  <div id="nl-result-text" style="font-size:20px; font-weight:bold; color:#1a1a2e; margin-bottom:12px; min-height:28px;"></div>
+
+  <div style="overflow-x:auto;">
+    <svg id="nl-svg" viewBox="0 0 600 100" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:600px;display:block;">
+      <defs>
+        <marker id="nlArrow" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto">
+          <path d="M0,0 L8,4 L0,8 Z" fill="#333"/>
+        </marker>
+      </defs>
+      <!-- base line -->
+      <line x1="20" y1="60" x2="590" y2="60" stroke="#333" stroke-width="2.5" marker-end="url(#nlArrow)"/>
+    </svg>
+  </div>
+
+  <div id="nl-explanation" style="margin-top:12px; font-size:14px; color:#555; font-style:italic; min-height:20px;"></div>
+</div>
+
+<script>
+function drawNumberLine() {
+  const a = parseInt(document.getElementById('nl-a').value);
+  const b = parseInt(document.getElementById('nl-b').value);
+  const sum = a + b;
+
+  if (sum > 10) {
+    document.getElementById('nl-result-text').textContent = '⚠️ Сума більше 10 — вибери менші числа!';
+    document.getElementById('nl-explanation').textContent = '';
+    return;
+  }
+
+  document.getElementById('nl-result-text').textContent = a + ' + ' + b + ' = ' + sum;
+
+  const svg = document.getElementById('nl-svg');
+  const step = 52;
+  const originX = 30;
+  const y = 60;
+
+  let html = \`
+    <defs>
+      <marker id="nlArrow" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto">
+        <path d="M0,0 L8,4 L0,8 Z" fill="#333"/>
+      </marker>
+      <marker id="jumpArrow" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto">
+        <path d="M0,0 L8,4 L0,8 Z" fill="#3a86ff"/>
+      </marker>
+    </defs>
+    <line x1="20" y1="\${y}" x2="590" y2="\${y}" stroke="#333" stroke-width="2.5" marker-end="url(#nlArrow)"/>
+  \`;
+
+  for (let i = 0; i <= 10; i++) {
+    const x = originX + i * step;
+    html += \`<line x1="\${x}" y1="\${y-7}" x2="\${x}" y2="\${y+7}" stroke="#333" stroke-width="2"/>\`;
+    let col = '#333'; let fw = 'normal'; let sz = 13;
+    if (i === a) { col = '#e63946'; fw = 'bold'; sz = 15; }
+    if (i === sum) { col = '#2a9d8f'; fw = 'bold'; sz = 15; }
+    html += \`<text x="\${x}" y="\${y+22}" text-anchor="middle" font-size="\${sz}" fill="\${col}" font-weight="\${fw}">\${i}</text>\`;
+  }
+
+  // Starting dot
+  const startX = originX + a * step;
+  html += \`<circle cx="\${startX}" cy="\${y}" r="7" fill="#e63946"/>\`;
+
+  // Jump arcs
+  for (let j = 0; j < b; j++) {
+    const x1 = originX + (a + j) * step;
+    const x2 = originX + (a + j + 1) * step;
+    const mx = (x1 + x2) / 2;
+    const my = y - 28;
+    html += \`<path d="M\${x1},\${y} Q\${mx},\${my} \${x2},\${y}" fill="none" stroke="#3a86ff" stroke-width="2.5" marker-end="url(#jumpArrow)"/>\`;
+    html += \`<text x="\${mx}" y="\${my - 5}" text-anchor="middle" font-size="10" fill="#3a86ff">+1</text>\`;
+  }
+
+  // End dot
+  const endX = originX + sum * step;
+  html += \`<circle cx="\${endX}" cy="\${y}" r="8" fill="#2a9d8f"/>\`;
+
+  // Start label
+  html += \`<text x="\${startX}" y="\${y - 14}" text-anchor="middle" font-size="11" fill="#e63946" font-weight="bold">старт</text>\`;
+  html += \`<text x="\${endX}" y="\${y - 14}" text-anchor="middle" font-size="11" fill="#2a9d8f" font-weight="bold">фінал</text>\`;
+
+  svg.innerHTML = html;
+
+  document.getElementById('nl-explanation').textContent =
+    'Починаємо на числі ' + a + ', робимо ' + b + ' стрибок' + (b === 1 ? '' : (b < 5 ? 'и' : 'ів')) + ' вперед — і потрапляємо на ' + sum + '!';
+}
+
+// Draw on load
+setTimeout(drawNumberLine, 100);
+</script>
+`}} />
+
+---
+
+{/* ============================================================
+    ВЛАСТИВІСТЬ ПЕРЕСТАВНОГО ЗАКОНУ
+    ============================================================ */}
+
+## Переставний закон додавання
+
+Ось дуже важлива властивість: **від зміни місць доданків сума не змінюється!**
+
+Це означає: **3 + 5 = 5 + 3 = 8**
+
+<div dangerouslySetInnerHTML={{__html: `
+<div style="margin: 1.5rem 0;">
+<svg viewBox="0 0 560 130" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:560px;display:block;margin:0 auto;">
+  <!-- Row 1: 3 + 5 -->
+  <!-- 3 red blocks -->
+  <rect x="10"  y="10" width="38" height="38" rx="7" fill="#e63946" stroke="#c1121f" stroke-width="1.5"/>
+  <rect x="54"  y="10" width="38" height="38" rx="7" fill="#e63946" stroke="#c1121f" stroke-width="1.5"/>
+  <rect x="98"  y="10" width="38" height="38" rx="7" fill="#e63946" stroke="#c1121f" stroke-width="1.5"/>
+  <!-- + -->
+  <text x="152" y="36" text-anchor="middle" font-size="24" font-weight="bold" fill="#555">+</text>
+  <!-- 5 blue blocks -->
+  <rect x="168" y="10" width="38" height="38" rx="7" fill="#3a86ff" stroke="#1d6fdb" stroke-width="1.5"/>
+  <rect x="212" y="10" width="38" height="38" rx="7" fill="#3a86ff" stroke="#1d6fdb" stroke-width="1.5"/>
+  <rect x="256" y="10" width="38" height="38" rx="7" fill="#3a86ff" stroke="#1d6fdb" stroke-width="1.5"/>
+  <rect x="300" y="10" width="38" height="38" rx="7" fill="#3a86ff" stroke="#1d6fdb" stroke-width="1.5"/>
+  <rect x="344" y="10" width="38" height="38" rx="7" fill="#3a86ff" stroke="#1d6fdb" stroke-width="1.5"/>
+  <!-- = 8 -->
+  <text x="400" y="36" text-anchor="middle" font-size="24" font-weight="bold" fill="#555">=</text>
+  <text x="435" y="37" text-anchor="middle" font-size="28" font-weight="bold" fill="#2a9d8f">8</text>
+  <text x="10"  y="62" font-size="12" fill="#555">3  +  5  =  8</text>
+
+  <!-- Arrows showing swap -->
+  <path d="M 250,70 Q 250,90 150,90 Q 50,90 50,70" fill="none" stroke="#f4a261" stroke-width="2" stroke-dasharray="5,3"/>
+  <text x="170" y="103" text-anchor="middle" font-size="11" fill="#f4a261">міняємо місцями</text>
+  <path d="M250,70 L245,78 L255,78 Z" fill="#f4a261"/>
+
+  <!-- Row 2: 5 + 3 -->
+  <!-- 5 blue blocks -->
+  <rect x="10"  y="108" width="38" height="38" rx="7" fill="#3a86ff" stroke="#1d6fdb" stroke-width="1.5"/>
+  <rect x="54"  y="108" width="38" height="38" rx="7" fill="#3a86ff" stroke="#1d6fdb" stroke-width="1.5"/>
+  <rect x="98"  y="108" width="38" height="38" rx="7" fill="#3a86ff" stroke="#1d6fdb" stroke-width="1.5"/>
+  <rect x="142" y="108" width="38" height="38" rx="7" fill="#3a86ff" stroke="#1d6fdb" stroke-width="1.5"/>
+  <rect x="186" y="108" width="38" height="38" rx="7" fill="#3a86ff" stroke="#1d6fdb" stroke-width="1.5"/>
+  <!-- + -->
+  <text x="244" y="133" text-anchor="middle" font-size="24" font-weight="bold" fill="#555">+</text>
+  <!-- 3 red blocks -->
+  <rect x="258" y="108" width="38" height="38" rx="7" fill="#e63946" stroke="#c1121f" stroke-width="1.5"/>
+  <rect x="302" y="108" width="38" height="38" rx="7" fill="#e63946" stroke="#c1121f" stroke-width="1.5"/>
+  <rect x="346" y="108" width="38" height="38" rx="7" fill="#e63946" stroke="#c1121f" stroke-width="1.5"/>
+  <!-- = 8 -->
+  <text x="400" y="133" text-anchor="middle" font-size="24" font-weight="bold" fill="#555">=</text>
+  <text x="435" y="134" text-anchor="middle" font-size="28" font-weight="bold" fill="#2a9d8f">8</text>
+</svg>
+</div>
+`}} />
+
+> Навіщо це знати? Якщо тобі важко рахувати **2 + 7**, просто поміняй місцями: **7 + 2** — і рахуй від 7, це набагато легше!
+
+---
+
+{/* ============================================================
+    ХИТРОЩІ ШВИДКОГО РАХУНКУ
+    ============================================================ */}
+
+## Хитрощі для швидкого рахунку
+
+Є кілька «магічних» прийомів, які допоможуть тобі рахувати блискавично. Запам'ятай їх!
+
+### Хитрість 1 — Додавання з 0
+
+**Будь-яке число + 0 = те саме число.** Нічого не змінюється!
+
+<div dangerouslySetInnerHTML={{__html: `
+<svg viewBox="0 0 400 60" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:400px;display:block;margin:1rem 0;">
+  <!-- Apple group: 5 -->
+  <text x="30"  y="40" font-size="24">🍎</text>
+  <text x="60"  y="40" font-size="24">🍎</text>
+  <text x="90"  y="40" font-size="24">🍎</text>
+  <text x="120" y="40" font-size="24">🍎</text>
+  <text x="150" y="40" font-size="24">🍎</text>
+  <text x="190" y="40" text-anchor="middle" font-size="26" font-weight="bold" fill="#555">+</text>
+  <!-- Empty basket -->
+  <rect x="210" y="18" width="50" height="30" rx="6" fill="#f0f0f0" stroke="#bbb" stroke-width="1.5" stroke-dasharray="4,2"/>
+  <text x="235" y="38" text-anchor="middle" font-size="13" fill="#999">0</text>
+  <text x="280" y="38" text-anchor="middle" font-size="26" font-weight="bold" fill="#555">=</text>
+  <text x="30"  y="58" font-size="12" fill="#555">5 яблук</text>
+  <text x="215" y="58" font-size="12" fill="#555">нічого</text>
+  <!-- Result -->
+  <text x="30"  y="40" font-size="24">🍎</text>
+  <text x="310" y="40" font-size="24">🍎</text>
+  <text x="340" y="40" font-size="24">🍎</text>
+  <text x="370" y="40" font-size="24">🍎</text>
+  <text x="310" y="40" font-size="24">🍎</text>
+
+  <text x="355" y="22" text-anchor="middle" font-size="13" fill="#2a9d8f" font-weight="bold">= 5</text>
+</svg>
+`}} />
+
+### Хитрість 2 — Додавання з 1
+
+**Просто назви наступне число!** Наступне — це число на 1 більше.
+
+<div dangerouslySetInnerHTML={{__html: `
+<div style="margin: 1rem 0;">
+<svg viewBox="0 0 480 80" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:480px;display:block;margin:0 auto;">
+  <!-- Number line segment -->
+  <line x1="20" y1="40" x2="460" y2="40" stroke="#eee" stroke-width="3"/>
+  <!-- Examples -->
+  <!-- 6 + 1 = 7 -->
+  <circle cx="80"  cy="40" r="22" fill="#f8f0ff" stroke="#c77dff" stroke-width="2"/>
+  <text x="80"  y="46" text-anchor="middle" font-size="18" font-weight="bold" fill="#7b2d8b">6</text>
+  <path d="M102,40 Q120,15 142,40" fill="none" stroke="#c77dff" stroke-width="2.5"/>
+  <text x="122" y="12" text-anchor="middle" font-size="11" fill="#c77dff">+1</text>
+  <circle cx="142" cy="40" r="22" fill="#f3e8ff" stroke="#c77dff" stroke-width="2"/>
+  <text x="142" y="46" text-anchor="middle" font-size="18" font-weight="bold" fill="#7b2d8b">7</text>
+  <text x="111" y="70" text-anchor="middle" font-size="13" fill="#555">6 + 1 = 7</text>
+
+  <!-- 8 + 1 = 9 -->
+  <circle cx="270" cy="40" r="22" fill="#f8f0ff" stroke="#c77dff" stroke-width="2"/>
+  <text x="270" y="46" text-anchor="middle" font-size="18" font-weight="bold" fill="#7b2d8b">8</text>
+  <path d="M292,40 Q310,15 332,40" fill="none" stroke="#c77dff" stroke-width="2.5"/>
+  <text x="312" y="12" text-anchor="middle" font-size="11" fill="#c77dff">+1</text>
+  <circle cx="332" cy="40" r="22" fill="#f3e8ff" stroke="#c77dff" stroke-width="2"/>
+  <text x="332" y="46" text-anchor="middle" font-size="18" font-weight="bold" fill="#7b2d8b">9</text>
+  <text x="301" y="70" text-anchor="middle" font-size="13" fill="#555">8 + 1 = 9</text>
+</svg>
+</div>
+`}} />
+
+### Хитрість 3 — Подвоєння (число + саме себе)
+
+Запам'ятай ці 5 пар — вони зустрічаються дуже часто:
+
+<div dangerouslySetInnerHTML={{__html: `
+<div style="margin: 1rem 0;">
+<svg viewBox="0 0 520 80" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:520px;display:block;margin:0 auto;">
+  <!-- 5 doubling facts as cards -->
+  <rect x="5"   y="5" width="88" height="70" rx="12" fill="#fff3cd" stroke="#ffc107" stroke-width="2"/>
+  <rect x="103" y="5" width="88" height="70" rx="12" fill="#d4edda" stroke="#28a745" stroke-width="2"/>
+  <rect x="201" y="5" width="88" height="70" rx="12" fill="#cce5ff" stroke="#3a86ff" stroke-width="2"/>
+  <rect x="299" y="5" width="88" height="70" rx="12" fill="#f8d7da" stroke="#e63946" stroke-width="2"/>
+  <rect x="397" y="5" width="118" height="70" rx="12" fill="#e2d9f3" stroke="#7b2d8b" stroke-width="2"/>
+
+  <text x="49"  y="35" text-anchor="middle" font-size="15" fill="#7b4f00">1 + 1</text>
+  <text x="49"  y="58" text-anchor="middle" font-size="22" font-weight="bold" fill="#7b4f00">= 2</text>
+
+  <text x="147" y="35" text-anchor="middle" font-size="15" fill="#155724">2 + 2</text>
+  <text x="147" y="58" text-anchor="middle" font-size="22" font-weight="bold" fill="#155724">= 4</text>
+
+  <text x="245" y="35" text-anchor="middle" font-size="15" fill="#004085">3 + 3</text>
+  <text x="245" y="58" text-anchor="middle" font-size="22" font-weight="bold" fill="#004085">= 6</text>
+
+  <text x="343" y="35" text-anchor="middle" font-size="15" fill="#721c24">4 + 4</text>
+  <text x="343" y="58" text-anchor="middle" font-size="22" font-weight="bold" fill="#721c24">= 8</text>
+
+  <text x="456" y="35" text-anchor="middle" font-size="15" fill="#4a1472">5 + 5</text>
+  <text x="456" y="58" text-anchor="middle" font-size="22" font-weight="bold" fill="#4a1472">= 10</text>
+</svg>
+</div>
+`}} />
+
+### Хитрість 4 — Пари, що дають 10 🎯
+
+Це **найважливіші** пари в математиці — запам'ятай їх назавжди!
+
+<div dangerouslySetInnerHTML={{__html: `
+<div style="margin: 1rem 0; overflow-x:auto;">
+<svg viewBox="0 0 520 130" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:520px;display:block;margin:0 auto;">
+  <defs>
+    <marker id="pairArrow" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
+      <path d="M0,0 L6,3 L0,6 Z" fill="#f4a261"/>
+    </marker>
+  </defs>
+
+  <!-- Ten-frame style: 10 squares -->
+  <!-- Row 1: 1-5 -->
+  <rect x="10"  y="10" width="42" height="42" rx="7" fill="#e63946" stroke="#c1121f" stroke-width="2"/>
+  <rect x="60"  y="10" width="42" height="42" rx="7" fill="#e63946" stroke="#c1121f" stroke-width="2"/>
+  <rect x="110" y="10" width="42" height="42" rx="7" fill="#e63946" stroke="#c1121f" stroke-width="2"/>
+  <rect x="160" y="10" width="42" height="42" rx="7" fill="#e63946" stroke="#c1121f" stroke-width="2"/>
+  <rect x="210" y="10" width="42" height="42" rx="7" fill="#e63946" stroke="#c1121f" stroke-width="2"/>
+  <!-- Row 2: 6-10 -->
+  <rect x="260" y="10" width="42" height="42" rx="7" fill="#3a86ff" stroke="#1d6fdb" stroke-width="2"/>
+  <rect x="310" y="10" width="42" height="42" rx="7" fill="#3a86ff" stroke="#1d6fdb" stroke-width="2"/>
+  <rect x="360" y="10" width="42" height="42" rx="7" fill="#3a86ff" stroke="#1d6fdb" stroke-width="2"/>
+  <rect x="410" y="10" width="42" height="42" rx="7" fill="#3a86ff" stroke="#1d6fdb" stroke-width="2"/>
+  <rect x="460" y="10" width="42" height="42" rx="7" fill="#3a86ff" stroke="#1d6fdb" stroke-width="2"/>
+
+  <!-- Numbers in blocks -->
+  <text x="31"  y="38" text-anchor="middle" font-size="18" font-weight="bold" fill="white">1</text>
+  <text x="81"  y="38" text-anchor="middle" font-size="18" font-weight="bold" fill="white">2</text>
+  <text x="131" y="38" text-anchor="middle" font-size="18" font-weight="bold" fill="white">3</text>
+  <text x="181" y="38" text-anchor="middle" font-size="18" font-weight="bold" fill="white">4</text>
+  <text x="231" y="38" text-anchor="middle" font-size="18" font-weight="bold" fill="white">5</text>
+  <text x="281" y="38" text-anchor="middle" font-size="18" font-weight="bold" fill="white">9</text>
+  <text x="331" y="38" text-anchor="middle" font-size="18" font-weight="bold" fill="white">8</text>
+  <text x="381" y="38" text-anchor="middle" font-size="18" font-weight="bold" fill="white">7</text>
+  <text x="431" y="38" text-anchor="middle" font-size="18" font-weight="bold" fill="white">6</text>
+  <text x="481" y="38" text-anchor="middle" font-size="18" font-weight="bold" fill="white">5</text>
+
+  <!-- Pair arcs -->
+  <path d="M31,52 Q256,100 481,52" fill="none" stroke="#f4a261" stroke-width="2" stroke-dasharray="5,3" marker-end="url(#pairArrow)"/>
+  <path d="M81,52 Q256,90 431,52" fill="none" stroke="#f4a261" stroke-width="2" stroke-dasharray="5,3" marker-end="url(#pairArrow)"/>
+  <path d="M131,52 Q256,80 381,52" fill="none" stroke="#f4a261" stroke-width="2" stroke-dasharray="5,3" marker-end="url(#pairArrow)"/>
+  <path d="M181,52 Q256,70 331,52" fill="none" stroke="#f4a261" stroke-width="2" stroke-dasharray="5,3" marker-end="url(#pairArrow)"/>
+  <path d="M231,52 Q256,62 281,52" fill="none" stroke="#f4a261" stroke-width="2" stroke-dasharray="5,3" marker-end="url(#pairArrow)"/>
+
+  <!-- Labels -->
+  <text x="256" y="120" text-anchor="middle" font-size="13" fill="#f4a261" font-weight="bold">Кожна пара в сумі дає 10!</text>
+  <text x="150" y="80" text-anchor="middle" font-size="11" fill="#f4a261">1+9</text>
+  <text x="200" y="92" text-anchor="middle" font-size="11" fill="#f4a261">2+8</text>
+  <text x="230" y="100" text-anchor="middle" font-size="11" fill="#f4a261">3+7</text>
+  <text x="250" y="108" text-anchor="middle" font-size="11" fill="#f4a261">4+6</text>
+  <text x="256" y="112" text-anchor="middle" font-size="11" fill="#f4a261">5+5</text>
+</svg>
+</div>
+`}} />
+
+---
+
+{/* ============================================================
+    ПОВНА ТАБЛИЦЯ ДОДАВАННЯ
+    ============================================================ */}
+
+## Таблиця додавання до 10
+
+Ось повна таблиця. Знайди перший доданок у лівому стовпці та другий у верхньому рядку — їх перетин і є відповідь.
+
+<SimpleTable
+  headers={["+", "0", "1", "2", "3", "4", "5"]}
+  rows={[
+    { cells: ["0", "0", "1", "2", "3", "4", "5"] },
+    { cells: ["1", "1", "2", "3", "4", "5", "6"] },
+    { cells: ["2", "2", "3", "4", "5", "6", "7"] },
+    { cells: ["3", "3", "4", "5", "6", "7", "8"] },
+    { cells: ["4", "4", "5", "6", "7", "8", "9"] },
+    { cells: ["5", "5", "6", "7", "8", "9", "10"] },
+  ]}
+/>
+
+> **Як читати таблицю:** рядок **3**, стовпець **4** → відповідь **7**. Спробуй знайти кілька прикладів самостійно!
+
+---
+
+## 🎮 Інтерактивна таблиця додавання
+
+Натисни на будь-яку клітинку — побачиш яскравий приклад!
+
+<div dangerouslySetInnerHTML={{__html: `
+<div style="margin:1.5rem 0; overflow-x:auto;">
+  <div id="table-display" style="
+    font-size:22px; font-weight:bold; color:#2a9d8f;
+    min-height:40px; margin-bottom:16px; text-align:center;
+    background:#f0fdf9; border-radius:10px; padding:10px;
+    border:2px solid #a7f3d0;
+  ">👆 Клікни на клітинку таблиці!</div>
+
+  <table id="add-table" style="border-collapse:collapse; font-family:Georgia,serif; margin:0 auto;">
+    <thead>
+      <tr>
+        <th style="width:44px;height:44px;background:#1a1a2e;color:white;text-align:center;font-size:18px;border:2px solid #333;">+</th>
+        ${[0,1,2,3,4,5,6,7,8,9,10].map(c => `<th style="width:44px;height:44px;background:#3a86ff;color:white;text-align:center;font-size:16px;border:2px solid #1d6fdb;">${c}</th>`).join('')}
+      </tr>
+    </thead>
+    <tbody>
+      ${[0,1,2,3,4,5,6,7,8,9,10].map(r =>
+        `<tr>
+          <td style="background:#e63946;color:white;text-align:center;font-size:16px;font-weight:bold;border:2px solid #c1121f;">${r}</td>
+          ${[0,1,2,3,4,5,6,7,8,9,10].map(c => {
+            const sum = r + c;
+            const bg = sum > 10 ? '#f8f8f8' : (sum === 10 ? '#ffd166' : '#fff');
+            const col = sum > 10 ? '#ccc' : '#1a1a2e';
+            const fw = sum === 10 ? 'bold' : 'normal';
+            return `<td onclick="showSum(${r},${c})" style="
+              width:44px;height:44px;text-align:center;font-size:16px;
+              border:1px solid #ddd;background:${bg};color:${col};
+              font-weight:${fw};cursor:${sum > 10 ? 'default':'pointer'};
+              transition:background 0.15s;
+            " onmouseover="this.style.background='#e8f4fd'" onmouseout="this.style.background='${bg}'">${sum > 10 ? '—' : sum}</td>`;
+          }).join('')}
+        </tr>`
+      ).join('')}
+    </tbody>
+  </table>
+  <div style="margin-top:10px;text-align:center;font-size:13px;color:#888;">
+    🟡 Жовті клітинки = сума рівно 10 (важливі пари!)
+  </div>
+</div>
+
+<script>
+function showSum(a, b) {
+  const sum = a + b;
+  if (sum > 10) return;
+  const el = document.getElementById('table-display');
+  el.style.transform = 'scale(0.97)';
+  setTimeout(() => el.style.transform = 'scale(1)', 100);
+
+  let msg = '';
+  if (b === 0 || a === 0) msg = ' (додавання з нулем — результат не змінюється!)';
+  else if (a === b) msg = ' (подвоєння — запам\'ятай цю пару!)';
+  else if (sum === 10) msg = ' 🎯 (пара що дає 10 — дуже важлива!)';
+  else if (a === 1 || b === 1) msg = ' (наступне число!)';
+
+  el.textContent = a + ' + ' + b + ' = ' + sum + msg;
+}
+</script>
+`}} />
+
+---
+
+{/* ============================================================
+    ЗАДАЧІ ЗІ СЦЕНАРІЯМИ
+    ============================================================ */}
+
+## Задачі з життя
+
+Математика — це не просто цифри. Вона є всюди навколо нас. Ось кілька задач!
+
+---
+
+### Задача 1: Метелики
+
+<div dangerouslySetInnerHTML={{__html: `
+<div style="display:flex;align-items:center;gap:20px;flex-wrap:wrap;margin:1rem 0;">
+<svg viewBox="0 0 260 100" xmlns="http://www.w3.org/2000/svg" style="width:260px;flex-shrink:0;">
+  <!-- Flower left side: 3 butterflies -->
+  <text x="15"  y="55" font-size="30">🦋</text>
+  <text x="55"  y="40" font-size="30">🦋</text>
+  <text x="35"  y="75" font-size="30">🦋</text>
+  <text x="30"  y="100" text-anchor="middle" font-size="12" fill="#555">3 метелики</text>
+
+  <text x="105" y="60" font-size="28" font-weight="bold" fill="#555">+</text>
+
+  <!-- Right side: 5 butterflies -->
+  <text x="135" y="45" font-size="30">🦋</text>
+  <text x="170" y="65" font-size="30">🦋</text>
+  <text x="200" y="45" font-size="30">🦋</text>
+  <text x="145" y="78" font-size="30">🦋</text>
+  <text x="210" y="72" font-size="30">🦋</text>
+  <text x="185" y="100" text-anchor="middle" font-size="12" fill="#555">5 метеликів</text>
+
+  <text x="245" y="60" font-size="28" font-weight="bold" fill="#2a9d8f">=?</text>
+</svg>
+<div style="font-family:Georgia,serif;">
+  <p style="font-size:16px;">На квітці сиділи <strong>3 метелики</strong>. Потім прилетіли ще <strong>5 метеликів</strong>. Скільки метеликів стало?</p>
+  <p style="font-size:20px;font-weight:bold;color:#2a9d8f;">3 + 5 = 8 метеликів 🦋</p>
+</div>
+</div>
+`}} />
+
+---
+
+### Задача 2: Рибки в акваріумі
+
+<div dangerouslySetInnerHTML={{__html: `
+<div style="margin:1rem 0;">
+<svg viewBox="0 0 420 140" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:420px;display:block;margin:0 auto;">
+  <!-- Aquarium -->
+  <rect x="10" y="20" width="390" height="110" rx="12" fill="#e0f7fa" stroke="#00acc1" stroke-width="3"/>
+  <!-- Water waves -->
+  <path d="M10,35 Q60,28 110,35 Q160,42 210,35 Q260,28 310,35 Q360,42 400,35" fill="none" stroke="#80deea" stroke-width="2"/>
+  <!-- Sand -->
+  <ellipse cx="205" cy="128" rx="190" ry="12" fill="#ffe082"/>
+  <!-- Plants -->
+  <path d="M50,128 Q45,100 55,75 Q65,100 60,128" fill="#66bb6a" stroke="#388e3c" stroke-width="1"/>
+  <path d="M360,128 Q355,105 365,85 Q375,105 370,128" fill="#66bb6a" stroke="#388e3c" stroke-width="1"/>
+
+  <!-- Group 1: 4 orange fish -->
+  <text x="80"  y="80" font-size="26">🐠</text>
+  <text x="115" y="95" font-size="26">🐠</text>
+  <text x="80"  y="110" font-size="26">🐠</text>
+  <text x="140" y="75" font-size="26">🐠</text>
+
+  <!-- Divider -->
+  <line x1="205" y1="30" x2="205" y2="128" stroke="#00acc1" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <text x="205" y="22" text-anchor="middle" font-size="11" fill="#00acc1">перегородка</text>
+
+  <!-- Group 2: 3 blue fish -->
+  <text x="230" y="85" font-size="26">🐟</text>
+  <text x="270" y="70" font-size="26">🐟</text>
+  <text x="310" y="95" font-size="26">🐟</text>
+
+  <!-- Labels -->
+  <text x="130" y="145" text-anchor="middle" font-size="13" fill="#555">4 помаранчевих</text>
+  <text x="290" y="145" text-anchor="middle" font-size="13" fill="#555">3 синіх</text>
+</svg>
+
+<div style="font-family:Georgia,serif; margin-top:12px;">
+  <p style="font-size:16px;">В акваріумі плавають <strong>4 помаранчеві рибки</strong> та <strong>3 сині рибки</strong>. Скільки рибок всього?</p>
+  <p style="font-size:20px;font-weight:bold;color:#2a9d8f;">4 + 3 = 7 рибок 🐟</p>
+</div>
+</div>
+`}} />
+
+---
+
+### Задача 3: Зірки на малюнку
+
+<div dangerouslySetInnerHTML={{__html: `
+<svg viewBox="0 0 400 100" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:400px;display:block;margin:1rem 0;">
+  <!-- Stars group 1: 6 stars -->
+  <text x="15"  y="55" font-size="28">⭐</text>
+  <text x="50"  y="40" font-size="28">⭐</text>
+  <text x="85"  y="60" font-size="28">⭐</text>
+  <text x="25"  y="78" font-size="28">⭐</text>
+  <text x="65"  y="78" font-size="28">⭐</text>
+  <text x="100" y="45" font-size="28">⭐</text>
+  <text x="63"  y="100" text-anchor="middle" font-size="12" fill="#555">6 зірок</text>
+
+  <text x="155" y="60" font-size="30" font-weight="bold" fill="#555">+</text>
+
+  <!-- Stars group 2: 2 stars -->
+  <text x="190" y="55" font-size="28">⭐</text>
+  <text x="225" y="55" font-size="28">⭐</text>
+  <text x="217" y="100" text-anchor="middle" font-size="12" fill="#555">2 зірки</text>
+
+  <text x="280" y="60" font-size="30" font-weight="bold" fill="#555">=</text>
+  <text x="330" y="62" text-anchor="middle" font-size="36" font-weight="bold" fill="#2a9d8f">8</text>
+  <text x="330" y="90" text-anchor="middle" font-size="12" fill="#2a9d8f">зірок</text>
+</svg>
+`}} />
+
+Маша намалювала **6 зірочок**, а Петро — ще **2**. Скільки зірочок на малюнку?
+
+**6 + 2 = 8 зірочок** ⭐
+
+---
+
+{/* ============================================================
+    ІНТЕРАКТИВНА ВПРАВА: СКЛАДИ ПРИКЛАД
+    ============================================================ */}
+
+## 🎮 Склади свій приклад
+
+Перетягни або вибери числа — і побачиш, що виходить!
+
+<div dangerouslySetInnerHTML={{__html: `
+<div style="
+  background: linear-gradient(135deg, #fff9f0, #fef3e2);
+  border: 2px solid #ffc107;
+  border-radius: 16px;
+  padding: 24px;
+  margin: 1.5rem 0;
+  font-family: Georgia, serif;
+  text-align: center;
+">
+  <div style="font-size:14px;color:#888;margin-bottom:16px;">Вибери два числа і натисни «Додати»</div>
+
+  <div style="display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap;margin-bottom:20px;">
+    <!-- Number picker 1 -->
+    <div style="display:flex;flex-direction:column;align-items:center;gap:6px;">
+      <span style="font-size:12px;color:#666;">Перший доданок</span>
+      <div id="num1-display" style="
+        width:72px;height:72px;background:#e63946;border-radius:14px;
+        display:flex;align-items:center;justify-content:center;
+        font-size:36px;font-weight:bold;color:white;cursor:pointer;
+        box-shadow:0 4px 12px rgba(230,57,70,0.4);
+        user-select:none;
+      " onclick="cycleNum(1)">3</div>
+      <span style="font-size:11px;color:#999;">← клікни, щоб змінити</span>
+    </div>
+
+    <div style="font-size:48px;font-weight:bold;color:#555;line-height:1;">+</div>
+
+    <!-- Number picker 2 -->
+    <div style="display:flex;flex-direction:column;align-items:center;gap:6px;">
+      <span style="font-size:12px;color:#666;">Другий доданок</span>
+      <div id="num2-display" style="
+        width:72px;height:72px;background:#3a86ff;border-radius:14px;
+        display:flex;align-items:center;justify-content:center;
+        font-size:36px;font-weight:bold;color:white;cursor:pointer;
+        box-shadow:0 4px 12px rgba(58,134,255,0.4);
+        user-select:none;
+      " onclick="cycleNum(2)">4</div>
+      <span style="font-size:11px;color:#999;">← клікни, щоб змінити</span>
+    </div>
+
+    <div style="font-size:48px;font-weight:bold;color:#555;line-height:1;">=</div>
+
+    <div style="display:flex;flex-direction:column;align-items:center;gap:6px;">
+      <span style="font-size:12px;color:#666;">Сума</span>
+      <div id="result-display" style="
+        width:72px;height:72px;background:#2a9d8f;border-radius:14px;
+        display:flex;align-items:center;justify-content:center;
+        font-size:36px;font-weight:bold;color:white;
+        box-shadow:0 4px 12px rgba(42,157,143,0.4);
+        transition: all 0.3s;
+      ">?</div>
+    </div>
+  </div>
+
+  <button onclick="calculateSum()" style="
+    background:linear-gradient(135deg,#2a9d8f,#1a7a6e);
+    color:white;border:none;border-radius:12px;
+    padding:14px 32px;font-size:18px;font-weight:bold;
+    cursor:pointer;box-shadow:0 4px 12px rgba(42,157,143,0.4);
+    transition:transform 0.1s;
+  " onmousedown="this.style.transform='scale(0.97)'" onmouseup="this.style.transform='scale(1)'">
+    ➕ Додати!
+  </button>
+
+  <div id="sum-message" style="margin-top:16px;font-size:16px;min-height:24px;color:#2a9d8f;font-weight:bold;"></div>
+
+  <!-- Visual dots -->
+  <div id="dots-visual" style="margin-top:16px;font-size:28px;letter-spacing:4px;min-height:36px;"></div>
+</div>
+
+<script>
+var n1 = 3, n2 = 4;
+function cycleNum(which) {
+  if (which === 1) {
+    n1 = (n1 % 9) + 1;
+    document.getElementById('num1-display').textContent = n1;
+  } else {
+    n2 = (n2 % 9) + 1;
+    document.getElementById('num2-display').textContent = n2;
+  }
+  document.getElementById('result-display').textContent = '?';
+  document.getElementById('sum-message').textContent = '';
+  document.getElementById('dots-visual').textContent = '';
+}
+function calculateSum() {
+  var sum = n1 + n2;
+  var rd = document.getElementById('result-display');
+  rd.textContent = sum > 10 ? '> 10' : sum;
+  rd.style.background = sum > 10 ? '#e63946' : '#2a9d8f';
+
+  var msgs = {
+    0: 'Нуль!', 1:'Один!', 2:'Два!', 3:'Три!', 4:'Чотири!',
+    5:'П\'ять!', 6:'Шість!', 7:'Сім!', 8:'Вісім!', 9:'Дев\'ять!', 10:'Десять! 🎉'
+  };
+  var msg = sum > 10 ? '⚠️ Сума більша за 10 — ми ще не вивчали такі числа!' :
+    n1 + ' + ' + n2 + ' = ' + sum + ' — ' + msgs[sum];
+  document.getElementById('sum-message').textContent = msg;
+
+  if (sum <= 10) {
+    var dots1 = '🔴'.repeat(n1);
+    var dots2 = '🔵'.repeat(n2);
+    document.getElementById('dots-visual').innerHTML =
+      dots1 + ' <span style="font-size:20px;color:#555">+</span> ' + dots2;
+  } else {
+    document.getElementById('dots-visual').textContent = '';
+  }
+}
+</script>
+`}} />
+
+---
+
+{/* ============================================================
+    ТРЕНУВАННЯ: УСНИЙ РАХУНОК
+    ============================================================ */}
+
+## 🎯 Тренування: швидкий усний рахунок
+
+Порахуй у думці та перевір себе!
+
+<div dangerouslySetInnerHTML={{__html: `
+<div style="
+  background: #f8f9ff;
+  border: 2px solid #c5cae9;
+  border-radius: 16px;
+  padding: 24px;
+  margin: 1.5rem 0;
+  font-family: Georgia, serif;
+">
+  <div id="drill-problem" style="
+    font-size:52px;font-weight:bold;text-align:center;
+    color:#1a1a2e;margin-bottom:20px;letter-spacing:4px;
+    min-height:64px;
+  ">? + ? = ?</div>
+
+  <div id="drill-choices" style="
+    display:flex;gap:12px;justify-content:center;flex-wrap:wrap;
+    margin-bottom:16px;
+  "></div>
+
+  <div id="drill-feedback" style="
+    text-align:center;font-size:18px;font-weight:bold;
+    min-height:28px;margin-bottom:12px;
+  "></div>
+
+  <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;">
+    <div style="font-size:14px;color:#666;">
+      Правильних: <strong id="drill-correct">0</strong> /
+      Всього: <strong id="drill-total">0</strong>
+    </div>
+    <button onclick="nextDrillProblem()" id="drill-next-btn" style="
+      background:#3a86ff;color:white;border:none;
+      border-radius:10px;padding:10px 24px;font-size:16px;
+      font-weight:bold;cursor:pointer;
+    ">Наступне завдання →</button>
+  </div>
+</div>
+
+<script>
+var drillCorrect = 0, drillTotal = 0, drillAnswer = 0;
+
+function nextDrillProblem() {
+  var a = Math.floor(Math.random() * 8) + 1;
+  var b = Math.floor(Math.random() * (10 - a)) + 0;
+  drillAnswer = a + b;
+
+  document.getElementById('drill-problem').textContent = a + ' + ' + b + ' = ?';
+  document.getElementById('drill-feedback').textContent = '';
+
+  // Generate 4 choices
+  var choices = new Set([drillAnswer]);
+  while (choices.size < 4) {
+    var wrong = drillAnswer + (Math.random() < 0.5 ? 1 : -1) * (Math.floor(Math.random() * 3) + 1);
+    if (wrong >= 0 && wrong <= 10) choices.add(wrong);
+  }
+  choices = Array.from(choices).sort(() => Math.random() - 0.5);
+
+  var choicesDiv = document.getElementById('drill-choices');
+  choicesDiv.innerHTML = '';
+  choices.forEach(function(c) {
+    var btn = document.createElement('button');
+    btn.textContent = c;
+    btn.style.cssText = 'font-size:28px;font-weight:bold;width:68px;height:68px;border-radius:12px;border:2px solid #c5cae9;background:white;cursor:pointer;transition:all 0.15s;';
+    btn.onmouseover = function() { this.style.background = '#e8f4fd'; };
+    btn.onmouseout = function() { this.style.background = 'white'; };
+    btn.onclick = function() { checkDrillAnswer(c, this, choices); };
+    choicesDiv.appendChild(btn);
+  });
+}
+
+function checkDrillAnswer(chosen, btn, allBtns) {
+  drillTotal++;
+  document.getElementById('drill-total').textContent = drillTotal;
+  var btns = document.getElementById('drill-choices').querySelectorAll('button');
+  btns.forEach(function(b) { b.onclick = null; b.style.cursor = 'default'; });
+
+  if (chosen === drillAnswer) {
+    drillCorrect++;
+    document.getElementById('drill-correct').textContent = drillCorrect;
+    btn.style.background = '#d4edda';
+    btn.style.borderColor = '#28a745';
+    btn.style.color = '#155724';
+    document.getElementById('drill-feedback').innerHTML = '<span style="color:#28a745">✅ Правильно! Молодець!</span>';
+  } else {
+    btn.style.background = '#f8d7da';
+    btn.style.borderColor = '#e63946';
+    btn.style.color = '#721c24';
+    // Highlight correct
+    btns.forEach(function(b) {
+      if (parseInt(b.textContent) === drillAnswer) {
+        b.style.background = '#d4edda';
+        b.style.borderColor = '#28a745';
+        b.style.color = '#155724';
+      }
+    });
+    document.getElementById('drill-feedback').innerHTML = '<span style="color:#e63946">❌ Не зовсім. Правильна відповідь: <strong>' + drillAnswer + '</strong></span>';
+  }
+}
+
+nextDrillProblem();
+</script>
+`}} />
+
+---
+
+{/* ============================================================
+    ТИПОВІ ПОМИЛКИ
+    ============================================================ */}
+
+## ⚠️ Типові помилки — не роби їх!
+
+<div dangerouslySetInnerHTML={{__html: `
+<div style="margin:1.5rem 0;font-family:Georgia,serif;">
+
+  <div style="background:#fff3cd;border:2px solid #ffc107;border-radius:12px;padding:16px;margin-bottom:14px;">
+    <div style="font-size:16px;font-weight:bold;color:#7b4f00;margin-bottom:6px;">❌ Помилка 1: забути про знак рівності</div>
+    <div style="font-size:15px;color:#7b4f00;">
+      Неправильно: <code style="background:#ffe69c;padding:2px 6px;border-radius:4px;">3 + 4</code> (де відповідь?)<br/>
+      Правильно: <code style="background:#d4edda;padding:2px 6px;border-radius:4px;">3 + 4 = 7</code> ✓
+    </div>
+  </div>
+
+  <div style="background:#f8d7da;border:2px solid #e63946;border-radius:12px;padding:16px;margin-bottom:14px;">
+    <div style="font-size:16px;font-weight:bold;color:#721c24;margin-bottom:6px;">❌ Помилка 2: рахувати лише другий доданок</div>
+    <div style="font-size:15px;color:#721c24;">
+      Приклад: 5 + 3 → дехто починає рахувати «1, 2, 3» і відповідає 3.<br/>
+      Треба: починаємо з 5, потім робимо 3 стрибки → 6, 7, <strong>8</strong> ✓
+    </div>
+  </div>
+
+  <div style="background:#d1ecf1;border:2px solid #3a86ff;border-radius:12px;padding:16px;">
+    <div style="font-size:16px;font-weight:bold;color:#0c5460;margin-bottom:6px;">💡 Порада: починай завжди від більшого числа!</div>
+    <div style="font-size:15px;color:#0c5460;">
+      2 + 7 → замість рахувати від 2 сім разів,<br/>
+      поміняй місцями: 7 + 2 → від 7 лише два стрибки: 8, <strong>9</strong> ✓ — набагато швидше!
+    </div>
+  </div>
+
+</div>
+`}} />
+
+---
+
+{/* ============================================================
+    ПІДСУМОК УРОКУ
+    ============================================================ */}
+
+## 📋 Підсумок уроку
+
+<div dangerouslySetInnerHTML={{__html: `
+<div style="
+  background: linear-gradient(135deg, #1a1a2e, #16213e);
+  border-radius: 16px;
+  padding: 28px;
+  margin: 1.5rem 0;
+  font-family: Georgia, serif;
+  color: white;
+">
+  <h3 style="color:#ffd166;margin-top:0;font-size:20px;">Що ти дізнався(лась) сьогодні:</h3>
+  <ul style="font-size:16px;line-height:2;color:#e8f4fd;padding-left:20px;">
+    <li><strong style="color:#ffd166;">Додавання</strong> — це об'єднання двох груп предметів</li>
+    <li>У прикладі є <strong style="color:#f4a261;">два доданки</strong> і <strong style="color:#2a9d8f;">сума</strong></li>
+    <li>Зручно уявляти числову пряму і робити «стрибки»</li>
+    <li><strong style="color:#ffd166;">Переставний закон:</strong> 3 + 5 = 5 + 3</li>
+    <li>Починай від більшого числа — рахувати легше</li>
+    <li>Запам'ятай <strong style="color:#ffd166;">5 пар, що дають 10:</strong> 1+9, 2+8, 3+7, 4+6, 5+5</li>
+    <li>Запам'ятай <strong style="color:#ffd166;">5 подвоєнь:</strong> 1+1, 2+2, 3+3, 4+4, 5+5</li>
+  </ul>
+  <div style="margin-top:16px;padding:12px;background:rgba(255,255,255,0.1);border-radius:10px;font-size:14px;color:#bee3f8;">
+    🎯 <strong>Наступний урок:</strong> Віднімання в межах 10 — ти навчишся «забирати» предмети з групи!
+  </div>
+</div>
+`}} />
+
+---
+
+{/* ============================================================
+    ФІНАЛЬНИЙ КВІЗ
+    ============================================================ */}
+
+## ✏️ Перевір себе: фінальний тест
 
 <Quiz questions={[
   {
-    q: "Яке число йде після 15?",
-    answer: 16,
-    choices: [14, 17, 16, 18],
-    explanation: "Після 15 завжди йде 16. Порядок: ...14, 15, 16, 17..."
+    q: "Скільки буде 4 + 4?",
+    answer: 8,
+    choices: [6, 7, 8, 9],
+    explanation: "4 + 4 = 8. Це подвоєння числа 4 — запам'ятай: 4 + 4 завжди дає 8!"
   },
   {
-    q: "Скільки буде 10 + 3?",
-    answer: 13,
-    choices: [12, 14, 13, 11],
-    explanation: "10 + 3 = 13. Тринадцять — це десять і ще три."
+    q: "Скільки буде 7 + 2?",
+    answer: 9,
+    choices: [8, 9, 10, 11],
+    explanation: "7 + 2 = 9. Перестрибуємо через одне: 7 → 8 → 9. Додавання з 2 — це два стрибки вправо."
   },
   {
-    q: "Яке число йде перед 20?",
-    answer: 19,
-    choices: [18, 20, 17, 19],
-    explanation: "Перед 20 стоїть 19. Порядок: ...17, 18, 19, 20."
+    q: "Які два числа в сумі дають 10?",
+    answer: "3 + 7",
+    choices: ["3 + 6", "3 + 7", "4 + 7", "5 + 6"],
+    explanation: "3 + 7 = 10. Це важлива пара доповнення до 10 — запам'ятай її разом з 1+9, 2+8, 4+6, 5+5!"
   },
   {
-    q: "Яке число між 16 і 18?",
-    answer: 17,
-    choices: [15, 19, 16, 17],
-    explanation: "Між 16 і 18 стоїть 17: ...16, 17, 18..."
+    q: "У кошику 5 яблук і 4 груші. Скільки фруктів разом?",
+    answer: 9,
+    choices: [7, 8, 9, 10],
+    explanation: "5 + 4 = 9. Разом дев'ять фруктів. Починаємо від більшого числа 5, робимо 4 стрибки: 6, 7, 8, 9."
   },
   {
-    q: "Скільки буде 10 + 7?",
-    answer: 17,
-    choices: [16, 18, 15, 17],
-    explanation: "10 + 7 = 17. Сімнадцять — це десять і ще сім."
+    q: "Скільки буде 6 + 1?",
+    answer: 7,
+    choices: [5, 6, 7, 8],
+    explanation: "6 + 1 = 7. Просто наступне число після 6! Додавання з 1 — це завжди «наступне число»."
+  },
+  {
+    q: "Як називаються числа, які додаємо?",
+    answer: "Доданки",
+    choices: ["Суми", "Доданки", "Множники", "Дільники"],
+    explanation: "Числа, які ми додаємо, називаються доданками. А результат додавання — це сума."
+  },
+  {
+    q: "Скільки буде 0 + 8?",
+    answer: 8,
+    choices: [0, 7, 8, 9],
+    explanation: "0 + 8 = 8. Коли додаємо нуль, число не змінюється! Нуль — це «нічого», тому 8 залишається 8."
+  },
+  {
+    q: "Чи правда, що 3 + 5 = 5 + 3?",
+    answer: "Так, від зміни місць доданків сума не змінюється",
+    choices: [
+      "Ні, це різні приклади",
+      "Так, від зміни місць доданків сума не змінюється",
+      "Залежить від чисел",
+      "Тільки якщо числа однакові"
+    ],
+    explanation: "Так! Це переставний закон додавання. 3 + 5 = 8 і 5 + 3 = 8 — завжди однаково. Це дуже зручно!"
+  },
+  {
+    q: "Маша зібрала 6 квіток, а Петро — 4. Скільки квіток разом?",
+    answer: 10,
+    choices: [8, 9, 10, 11],
+    explanation: "6 + 4 = 10. Це одна з пар доповнення до 10! Разом рівно 10 квіток 🌸"
+  },
+  {
+    q: "Яке число потрібно додати до 7, щоб отримати 10?",
+    answer: 3,
+    choices: [2, 3, 4, 5],
+    explanation: "7 + 3 = 10. Щоб знайти потрібне число, думаємо: «до 7 скільки не вистачає до 10?» — не вистачає 3!"
   }
 ]} />
+
+---
+
+{/* ============================================================
+    ДОМАШНЄ ЗАВДАННЯ
+    ============================================================ */}
+
+## 📝 Домашнє завдання
+
+Спробуй розв'язати ці задачі самостійно на папері:
+
+1. Порахуй усі пари, що дають **8**: _ + _ = 8 (знайди всі варіанти!)
+2. Заповни пропуски: **5 + __ = 9** та **__ + 3 = 7**
+3. Склади власну задачу-казку зі словами «разом», «скільки» і числами до 10
+4. Намалюй числову пряму і покажи приклад **4 + 5** стрибками
+
+> **Підказка для завдання 1:** починай з 0 + 8, потім 1 + 7, 2 + 6... Скільки пар знайшов?
