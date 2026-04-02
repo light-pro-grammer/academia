@@ -79,6 +79,50 @@ async function loadLesson(key: string): Promise<Lesson | null> {
                 const mod = await import("@/data/math/arithmetic/03-addition/18-addition-applications");
                 return mod.default as Lesson;
             }
+            case "math/arithmetic/04-subtraction/19-subtraction-basics": {
+                const mod = await import("@/data/math/arithmetic/04-subtraction/19-subtraction-basics");
+                return mod.default as Lesson;
+            }
+            case "math/arithmetic/04-subtraction/20-subtraction-properties": {
+                const mod = await import("@/data/math/arithmetic/04-subtraction/20-subtraction-properties");
+                return mod.default as Lesson;
+            }
+            case "math/arithmetic/04-subtraction/21-mental-subtraction": {
+                const mod = await import("@/data/math/arithmetic/04-subtraction/21-mental-subtraction");
+                return mod.default as Lesson;
+            }
+            case "math/arithmetic/04-subtraction/22-column-subtraction": {
+                const mod = await import("@/data/math/arithmetic/04-subtraction/22-column-subtraction");
+                return mod.default as Lesson;
+            }
+            case "math/arithmetic/04-subtraction/23-subtraction-applications": {
+                const mod = await import("@/data/math/arithmetic/04-subtraction/23-subtraction-applications");
+                return mod.default as Lesson;
+            }
+            case "math/arithmetic/05-multiplication/24-multiplication-basics": {
+                const mod = await import("@/data/math/arithmetic/05-multiplication/24-multiplication-basics");
+                return mod.default as Lesson;
+            }
+            case "math/arithmetic/05-multiplication/25-multiplication-properties": {
+                const mod = await import("@/data/math/arithmetic/05-multiplication/25-multiplication-properties");
+                return mod.default as Lesson;
+            }
+            case "math/arithmetic/05-multiplication/26-multiplication-table": {
+                const mod = await import("@/data/math/arithmetic/05-multiplication/26-multiplication-table");
+                return mod.default as Lesson;
+            }
+            case "math/arithmetic/05-multiplication/27-multi-digit-multiplication": {
+                const mod = await import("@/data/math/arithmetic/05-multiplication/27-multi-digit-multiplication");
+                return mod.default as Lesson;
+            }
+            case "math/arithmetic/05-multiplication/28-mental-multiplication": {
+                const mod = await import("@/data/math/arithmetic/05-multiplication/28-mental-multiplication");
+                return mod.default as Lesson;
+            }
+            case "math/arithmetic/05-multiplication/29-multiplication-applications": {
+                const mod = await import("@/data/math/arithmetic/05-multiplication/29-multiplication-applications");
+                return mod.default as Lesson;
+            }
             default:
                 return null;
         }
