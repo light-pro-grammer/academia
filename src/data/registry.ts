@@ -687,6 +687,31 @@ export const lessonRegistry: LessonRef[] = [
         title: "Раціональні та ірраціональні числа",
         sectionTitle: "Степені та корені",
     },
+    // ── Розділ 16: Вимірювання ────────────────────────────────
+    {
+        subject: "math",
+        course: "arithmetic",
+        section: "16-measurements",
+        lesson: "87-length",
+        title: "Довжина та периметр",
+        sectionTitle: "Вимірювання",
+    },
+    {
+        subject: "math",
+        course: "arithmetic",
+        section: "16-measurements",
+        lesson: "88-weight-mass",
+        title: "Вага та маса",
+        sectionTitle: "Вимірювання",
+    },
+    {
+        subject: "math",
+        course: "arithmetic",
+        section: "16-measurements",
+        lesson: "89-time-temperature",
+        title: "Час та температура",
+        sectionTitle: "Вимірювання",
+    },
 ];
 
 export function getLessonUrl(ref: LessonRef): string {

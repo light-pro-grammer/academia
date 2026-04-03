@@ -339,6 +339,18 @@ async function loadLesson(key: string): Promise<Lesson | null> {
                 const mod = await import("@/data/math/arithmetic/15-powers-roots/86-rational-irrational");
                 return mod.default as Lesson;
             }
+            case "math/arithmetic/16-measurements/87-length": {
+                const mod = await import("@/data/math/arithmetic/16-measurements/87-length");
+                return mod.default as Lesson;
+            }
+            case "math/arithmetic/16-measurements/88-weight-mass": {
+                const mod = await import("@/data/math/arithmetic/16-measurements/88-weight-mass");
+                return mod.default as Lesson;
+            }
+            case "math/arithmetic/16-measurements/89-time-temperature": {
+                const mod = await import("@/data/math/arithmetic/16-measurements/89-time-temperature");
+                return mod.default as Lesson;
+            }
             default:
                 return null;
         }
