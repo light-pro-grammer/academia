@@ -315,6 +315,30 @@ async function loadLesson(key: string): Promise<Lesson | null> {
                 const mod = await import("@/data/math/arithmetic/14-percentages/80-interest-rates");
                 return mod.default as Lesson;
             }
+            case "math/arithmetic/15-powers-roots/81-exponent-basics": {
+                const mod = await import("@/data/math/arithmetic/15-powers-roots/81-exponent-basics");
+                return mod.default as Lesson;
+            }
+            case "math/arithmetic/15-powers-roots/82-common-powers": {
+                const mod = await import("@/data/math/arithmetic/15-powers-roots/82-common-powers");
+                return mod.default as Lesson;
+            }
+            case "math/arithmetic/15-powers-roots/83-exponent-rules": {
+                const mod = await import("@/data/math/arithmetic/15-powers-roots/83-exponent-rules");
+                return mod.default as Lesson;
+            }
+            case "math/arithmetic/15-powers-roots/84-square-roots": {
+                const mod = await import("@/data/math/arithmetic/15-powers-roots/84-square-roots");
+                return mod.default as Lesson;
+            }
+            case "math/arithmetic/15-powers-roots/85-cube-roots": {
+                const mod = await import("@/data/math/arithmetic/15-powers-roots/85-cube-roots");
+                return mod.default as Lesson;
+            }
+            case "math/arithmetic/15-powers-roots/86-rational-irrational": {
+                const mod = await import("@/data/math/arithmetic/15-powers-roots/86-rational-irrational");
+                return mod.default as Lesson;
+            }
             default:
                 return null;
         }

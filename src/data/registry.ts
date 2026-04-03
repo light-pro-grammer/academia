@@ -638,6 +638,55 @@ export const lessonRegistry: LessonRef[] = [
         title: "Банківські відсотки та складні задачі",
         sectionTitle: "Відсотки",
     },
+    // ── Розділ 15: Степені та корені ─────────────────────────
+    {
+        subject: "math",
+        course: "arithmetic",
+        section: "15-powers-roots",
+        lesson: "81-exponent-basics",
+        title: "Основи степенів",
+        sectionTitle: "Степені та корені",
+    },
+    {
+        subject: "math",
+        course: "arithmetic",
+        section: "15-powers-roots",
+        lesson: "82-common-powers",
+        title: "Поширені степені та від'ємні показники",
+        sectionTitle: "Степені та корені",
+    },
+    {
+        subject: "math",
+        course: "arithmetic",
+        section: "15-powers-roots",
+        lesson: "83-exponent-rules",
+        title: "Властивості та правила дій зі степенями",
+        sectionTitle: "Степені та корені",
+    },
+    {
+        subject: "math",
+        course: "arithmetic",
+        section: "15-powers-roots",
+        lesson: "84-square-roots",
+        title: "Квадратні корені",
+        sectionTitle: "Степені та корені",
+    },
+    {
+        subject: "math",
+        course: "arithmetic",
+        section: "15-powers-roots",
+        lesson: "85-cube-roots",
+        title: "Кубічні та вищі корені",
+        sectionTitle: "Степені та корені",
+    },
+    {
+        subject: "math",
+        course: "arithmetic",
+        section: "15-powers-roots",
+        lesson: "86-rational-irrational",
+        title: "Раціональні та ірраціональні числа",
+        sectionTitle: "Степені та корені",
+    },
 ];
 
 export function getLessonUrl(ref: LessonRef): string {
