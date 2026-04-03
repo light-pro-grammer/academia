@@ -207,6 +207,26 @@ async function loadLesson(key: string): Promise<Lesson | null> {
                 const mod = await import("@/data/math/arithmetic/09-factors-multiples/50-gcd-lcm");
                 return mod.default as Lesson;
             }
+            case "math/arithmetic/10-fractions-intro/51-fraction-basics": {
+                const mod = await import("@/data/math/arithmetic/10-fractions-intro/51-fraction-basics");
+                return mod.default as Lesson;
+            }
+            case "math/arithmetic/10-fractions-intro/52-equivalent-fractions": {
+                const mod = await import("@/data/math/arithmetic/10-fractions-intro/52-equivalent-fractions");
+                return mod.default as Lesson;
+            }
+            case "math/arithmetic/10-fractions-intro/53-comparing-fractions": {
+                const mod = await import("@/data/math/arithmetic/10-fractions-intro/53-comparing-fractions");
+                return mod.default as Lesson;
+            }
+            case "math/arithmetic/10-fractions-intro/54-mixed-numbers": {
+                const mod = await import("@/data/math/arithmetic/10-fractions-intro/54-mixed-numbers");
+                return mod.default as Lesson;
+            }
+            case "math/arithmetic/10-fractions-intro/55-fractions-number-line": {
+                const mod = await import("@/data/math/arithmetic/10-fractions-intro/55-fractions-number-line");
+                return mod.default as Lesson;
+            }
             default:
                 return null;
         }

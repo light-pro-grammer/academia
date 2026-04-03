@@ -417,6 +417,47 @@ export const lessonRegistry: LessonRef[] = [
         title: "НСД та НСК — алгоритми знаходження",
         sectionTitle: "Дільники, кратні і теорія чисел",
     },
+    // ── Розділ 10: Дроби — вступ ──────────────────────────────
+    {
+        subject: "math",
+        course: "arithmetic",
+        section: "10-fractions-intro",
+        lesson: "51-fraction-basics",
+        title: "Що таке дріб",
+        sectionTitle: "Дроби: вступ та основні поняття",
+    },
+    {
+        subject: "math",
+        course: "arithmetic",
+        section: "10-fractions-intro",
+        lesson: "52-equivalent-fractions",
+        title: "Рівносильні дроби та скорочення",
+        sectionTitle: "Дроби: вступ та основні поняття",
+    },
+    {
+        subject: "math",
+        course: "arithmetic",
+        section: "10-fractions-intro",
+        lesson: "53-comparing-fractions",
+        title: "Порівняння дробів",
+        sectionTitle: "Дроби: вступ та основні поняття",
+    },
+    {
+        subject: "math",
+        course: "arithmetic",
+        section: "10-fractions-intro",
+        lesson: "54-mixed-numbers",
+        title: "Мішані числа та неправильні дроби",
+        sectionTitle: "Дроби: вступ та основні поняття",
+    },
+    {
+        subject: "math",
+        course: "arithmetic",
+        section: "10-fractions-intro",
+        lesson: "55-fractions-number-line",
+        title: "Дроби на числовій прямій",
+        sectionTitle: "Дроби: вступ та основні поняття",
+    },
 ];
 
 export function getLessonUrl(ref: LessonRef): string {
