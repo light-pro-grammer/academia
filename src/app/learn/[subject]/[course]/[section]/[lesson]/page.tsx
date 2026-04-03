@@ -187,6 +187,26 @@ async function loadLesson(key: string): Promise<Lesson | null> {
                 const mod = await import("@/data/math/arithmetic/08-order-of-operations/45-order-applications");
                 return mod.default as Lesson;
             }
+            case "math/arithmetic/09-factors-multiples/46-factors-divisors": {
+                const mod = await import("@/data/math/arithmetic/09-factors-multiples/46-factors-divisors");
+                return mod.default as Lesson;
+            }
+            case "math/arithmetic/09-factors-multiples/47-multiples": {
+                const mod = await import("@/data/math/arithmetic/09-factors-multiples/47-multiples");
+                return mod.default as Lesson;
+            }
+            case "math/arithmetic/09-factors-multiples/48-prime-composite": {
+                const mod = await import("@/data/math/arithmetic/09-factors-multiples/48-prime-composite");
+                return mod.default as Lesson;
+            }
+            case "math/arithmetic/09-factors-multiples/49-prime-factorization": {
+                const mod = await import("@/data/math/arithmetic/09-factors-multiples/49-prime-factorization");
+                return mod.default as Lesson;
+            }
+            case "math/arithmetic/09-factors-multiples/50-gcd-lcm": {
+                const mod = await import("@/data/math/arithmetic/09-factors-multiples/50-gcd-lcm");
+                return mod.default as Lesson;
+            }
             default:
                 return null;
         }

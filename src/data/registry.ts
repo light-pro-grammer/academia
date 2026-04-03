@@ -376,6 +376,47 @@ export const lessonRegistry: LessonRef[] = [
         title: "Практичне застосування порядку дій",
         sectionTitle: "Порядок виконання дій",
     },
+    // ── Розділ 9: Дільники, кратні і теорія чисел ─────────────
+    {
+        subject: "math",
+        course: "arithmetic",
+        section: "09-factors-multiples",
+        lesson: "46-factors-divisors",
+        title: "Дільники та множники числа",
+        sectionTitle: "Дільники, кратні і теорія чисел",
+    },
+    {
+        subject: "math",
+        course: "arithmetic",
+        section: "09-factors-multiples",
+        lesson: "47-multiples",
+        title: "Кратні числа та НСК",
+        sectionTitle: "Дільники, кратні і теорія чисел",
+    },
+    {
+        subject: "math",
+        course: "arithmetic",
+        section: "09-factors-multiples",
+        lesson: "48-prime-composite",
+        title: "Прості та складені числа",
+        sectionTitle: "Дільники, кратні і теорія чисел",
+    },
+    {
+        subject: "math",
+        course: "arithmetic",
+        section: "09-factors-multiples",
+        lesson: "49-prime-factorization",
+        title: "Розклад на прості множники",
+        sectionTitle: "Дільники, кратні і теорія чисел",
+    },
+    {
+        subject: "math",
+        course: "arithmetic",
+        section: "09-factors-multiples",
+        lesson: "50-gcd-lcm",
+        title: "НСД та НСК — алгоритми знаходження",
+        sectionTitle: "Дільники, кратні і теорія чисел",
+    },
 ];
 
 export function getLessonUrl(ref: LessonRef): string {
