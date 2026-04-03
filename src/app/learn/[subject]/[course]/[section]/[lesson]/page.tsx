@@ -147,6 +147,26 @@ async function loadLesson(key: string): Promise<Lesson | null> {
                 const mod = await import("@/data/math/arithmetic/06-division/35-division-applications");
                 return mod.default as Lesson;
             }
+            case "math/arithmetic/07-integers/36-negative-numbers": {
+                const mod = await import("@/data/math/arithmetic/07-integers/36-negative-numbers");
+                return mod.default as Lesson;
+            }
+            case "math/arithmetic/07-integers/37-absolute-value": {
+                const mod = await import("@/data/math/arithmetic/07-integers/37-absolute-value");
+                return mod.default as Lesson;
+            }
+            case "math/arithmetic/07-integers/38-adding-subtracting-integers": {
+                const mod = await import("@/data/math/arithmetic/07-integers/38-adding-subtracting-integers");
+                return mod.default as Lesson;
+            }
+            case "math/arithmetic/07-integers/39-multiplying-dividing-integers": {
+                const mod = await import("@/data/math/arithmetic/07-integers/39-multiplying-dividing-integers");
+                return mod.default as Lesson;
+            }
+            case "math/arithmetic/07-integers/40-integers-applications": {
+                const mod = await import("@/data/math/arithmetic/07-integers/40-integers-applications");
+                return mod.default as Lesson;
+            }
             default:
                 return null;
         }

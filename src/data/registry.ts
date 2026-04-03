@@ -294,6 +294,47 @@ export const lessonRegistry: LessonRef[] = [
         title: "Оцінювання та практичне застосування",
         sectionTitle: "Ділення",
     },
+    // ── Розділ 7: Цілі та від'ємні числа ─────────────────────
+    {
+        subject: "math",
+        course: "arithmetic",
+        section: "07-integers",
+        lesson: "36-negative-numbers",
+        title: "Від'ємні числа та числова пряма",
+        sectionTitle: "Цілі та від'ємні числа",
+    },
+    {
+        subject: "math",
+        course: "arithmetic",
+        section: "07-integers",
+        lesson: "37-absolute-value",
+        title: "Модуль числа та відстань",
+        sectionTitle: "Цілі та від'ємні числа",
+    },
+    {
+        subject: "math",
+        course: "arithmetic",
+        section: "07-integers",
+        lesson: "38-adding-subtracting-integers",
+        title: "Додавання і віднімання цілих чисел",
+        sectionTitle: "Цілі та від'ємні числа",
+    },
+    {
+        subject: "math",
+        course: "arithmetic",
+        section: "07-integers",
+        lesson: "39-multiplying-dividing-integers",
+        title: "Множення і ділення цілих чисел",
+        sectionTitle: "Цілі та від'ємні числа",
+    },
+    {
+        subject: "math",
+        course: "arithmetic",
+        section: "07-integers",
+        lesson: "40-integers-applications",
+        title: "Практичне застосування цілих чисел",
+        sectionTitle: "Цілі та від'ємні числа",
+    },
 ];
 
 export function getLessonUrl(ref: LessonRef): string {
