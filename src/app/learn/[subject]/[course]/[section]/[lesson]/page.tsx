@@ -123,6 +123,30 @@ async function loadLesson(key: string): Promise<Lesson | null> {
                 const mod = await import("@/data/math/arithmetic/05-multiplication/29-multiplication-applications");
                 return mod.default as Lesson;
             }
+            case "math/arithmetic/06-division/30-division-basics": {
+                const mod = await import("@/data/math/arithmetic/06-division/30-division-basics");
+                return mod.default as Lesson;
+            }
+            case "math/arithmetic/06-division/31-division-properties": {
+                const mod = await import("@/data/math/arithmetic/06-division/31-division-properties");
+                return mod.default as Lesson;
+            }
+            case "math/arithmetic/06-division/32-division-remainder": {
+                const mod = await import("@/data/math/arithmetic/06-division/32-division-remainder");
+                return mod.default as Lesson;
+            }
+            case "math/arithmetic/06-division/33-long-division": {
+                const mod = await import("@/data/math/arithmetic/06-division/33-long-division");
+                return mod.default as Lesson;
+            }
+            case "math/arithmetic/06-division/34-divisibility": {
+                const mod = await import("@/data/math/arithmetic/06-division/34-divisibility");
+                return mod.default as Lesson;
+            }
+            case "math/arithmetic/06-division/35-division-applications": {
+                const mod = await import("@/data/math/arithmetic/06-division/35-division-applications");
+                return mod.default as Lesson;
+            }
             default:
                 return null;
         }

@@ -245,6 +245,55 @@ export const lessonRegistry: LessonRef[] = [
         title: "Практичне застосування множення",
         sectionTitle: "Множення",
     },
+    // ── Розділ 6: Ділення ─────────────────────────────────────
+    {
+        subject: "math",
+        course: "arithmetic",
+        section: "06-division",
+        lesson: "30-division-basics",
+        title: "Основні поняття ділення",
+        sectionTitle: "Ділення",
+    },
+    {
+        subject: "math",
+        course: "arithmetic",
+        section: "06-division",
+        lesson: "31-division-properties",
+        title: "Властивості та особливі випадки ділення",
+        sectionTitle: "Ділення",
+    },
+    {
+        subject: "math",
+        course: "arithmetic",
+        section: "06-division",
+        lesson: "32-division-remainder",
+        title: "Ділення з остачею",
+        sectionTitle: "Ділення",
+    },
+    {
+        subject: "math",
+        course: "arithmetic",
+        section: "06-division",
+        lesson: "33-long-division",
+        title: "Ділення у стовпчик",
+        sectionTitle: "Ділення",
+    },
+    {
+        subject: "math",
+        course: "arithmetic",
+        section: "06-division",
+        lesson: "34-divisibility",
+        title: "Ознаки подільності",
+        sectionTitle: "Ділення",
+    },
+    {
+        subject: "math",
+        course: "arithmetic",
+        section: "06-division",
+        lesson: "35-division-applications",
+        title: "Оцінювання та практичне застосування",
+        sectionTitle: "Ділення",
+    },
 ];
 
 export function getLessonUrl(ref: LessonRef): string {
