@@ -167,6 +167,26 @@ async function loadLesson(key: string): Promise<Lesson | null> {
                 const mod = await import("@/data/math/arithmetic/07-integers/40-integers-applications");
                 return mod.default as Lesson;
             }
+            case "math/arithmetic/08-order-of-operations/41-order-basics": {
+                const mod = await import("@/data/math/arithmetic/08-order-of-operations/41-order-basics");
+                return mod.default as Lesson;
+            }
+            case "math/arithmetic/08-order-of-operations/42-pemdas": {
+                const mod = await import("@/data/math/arithmetic/08-order-of-operations/42-pemdas");
+                return mod.default as Lesson;
+            }
+            case "math/arithmetic/08-order-of-operations/43-nested-parentheses": {
+                const mod = await import("@/data/math/arithmetic/08-order-of-operations/43-nested-parentheses");
+                return mod.default as Lesson;
+            }
+            case "math/arithmetic/08-order-of-operations/44-expressions-variables": {
+                const mod = await import("@/data/math/arithmetic/08-order-of-operations/44-expressions-variables");
+                return mod.default as Lesson;
+            }
+            case "math/arithmetic/08-order-of-operations/45-order-applications": {
+                const mod = await import("@/data/math/arithmetic/08-order-of-operations/45-order-applications");
+                return mod.default as Lesson;
+            }
             default:
                 return null;
         }

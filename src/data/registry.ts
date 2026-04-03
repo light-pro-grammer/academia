@@ -335,6 +335,47 @@ export const lessonRegistry: LessonRef[] = [
         title: "Практичне застосування цілих чисел",
         sectionTitle: "Цілі та від'ємні числа",
     },
+    // ── Розділ 8: Порядок виконання дій ──────────────────────
+    {
+        subject: "math",
+        course: "arithmetic",
+        section: "08-order-of-operations",
+        lesson: "41-order-basics",
+        title: "Пріоритет операцій та дужки",
+        sectionTitle: "Порядок виконання дій",
+    },
+    {
+        subject: "math",
+        course: "arithmetic",
+        section: "08-order-of-operations",
+        lesson: "42-pemdas",
+        title: "ДМДД — правило порядку дій",
+        sectionTitle: "Порядок виконання дій",
+    },
+    {
+        subject: "math",
+        course: "arithmetic",
+        section: "08-order-of-operations",
+        lesson: "43-nested-parentheses",
+        title: "Вкладені дужки та складні вирази",
+        sectionTitle: "Порядок виконання дій",
+    },
+    {
+        subject: "math",
+        course: "arithmetic",
+        section: "08-order-of-operations",
+        lesson: "44-expressions-variables",
+        title: "Вирази зі змінними",
+        sectionTitle: "Порядок виконання дій",
+    },
+    {
+        subject: "math",
+        course: "arithmetic",
+        section: "08-order-of-operations",
+        lesson: "45-order-applications",
+        title: "Практичне застосування порядку дій",
+        sectionTitle: "Порядок виконання дій",
+    },
 ];
 
 export function getLessonUrl(ref: LessonRef): string {
