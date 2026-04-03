@@ -227,6 +227,30 @@ async function loadLesson(key: string): Promise<Lesson | null> {
                 const mod = await import("@/data/math/arithmetic/10-fractions-intro/55-fractions-number-line");
                 return mod.default as Lesson;
             }
+            case "math/arithmetic/11-fractions-arithmetic/56-adding-fractions": {
+                const mod = await import("@/data/math/arithmetic/11-fractions-arithmetic/56-adding-fractions");
+                return mod.default as Lesson;
+            }
+            case "math/arithmetic/11-fractions-arithmetic/57-subtracting-fractions": {
+                const mod = await import("@/data/math/arithmetic/11-fractions-arithmetic/57-subtracting-fractions");
+                return mod.default as Lesson;
+            }
+            case "math/arithmetic/11-fractions-arithmetic/58-multiplying-fractions": {
+                const mod = await import("@/data/math/arithmetic/11-fractions-arithmetic/58-multiplying-fractions");
+                return mod.default as Lesson;
+            }
+            case "math/arithmetic/11-fractions-arithmetic/59-dividing-fractions": {
+                const mod = await import("@/data/math/arithmetic/11-fractions-arithmetic/59-dividing-fractions");
+                return mod.default as Lesson;
+            }
+            case "math/arithmetic/11-fractions-arithmetic/60-mixed-number-operations": {
+                const mod = await import("@/data/math/arithmetic/11-fractions-arithmetic/60-mixed-number-operations");
+                return mod.default as Lesson;
+            }
+            case "math/arithmetic/11-fractions-arithmetic/61-fractions-applications": {
+                const mod = await import("@/data/math/arithmetic/11-fractions-arithmetic/61-fractions-applications");
+                return mod.default as Lesson;
+            }
             default:
                 return null;
         }

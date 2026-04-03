@@ -458,6 +458,55 @@ export const lessonRegistry: LessonRef[] = [
         title: "Дроби на числовій прямій",
         sectionTitle: "Дроби: вступ та основні поняття",
     },
+    // ── Розділ 11: Дроби — арифметичні дії ───────────────────
+    {
+        subject: "math",
+        course: "arithmetic",
+        section: "11-fractions-arithmetic",
+        lesson: "56-adding-fractions",
+        title: "Додавання дробів",
+        sectionTitle: "Дроби: арифметичні дії",
+    },
+    {
+        subject: "math",
+        course: "arithmetic",
+        section: "11-fractions-arithmetic",
+        lesson: "57-subtracting-fractions",
+        title: "Віднімання дробів",
+        sectionTitle: "Дроби: арифметичні дії",
+    },
+    {
+        subject: "math",
+        course: "arithmetic",
+        section: "11-fractions-arithmetic",
+        lesson: "58-multiplying-fractions",
+        title: "Множення дробів",
+        sectionTitle: "Дроби: арифметичні дії",
+    },
+    {
+        subject: "math",
+        course: "arithmetic",
+        section: "11-fractions-arithmetic",
+        lesson: "59-dividing-fractions",
+        title: "Ділення дробів",
+        sectionTitle: "Дроби: арифметичні дії",
+    },
+    {
+        subject: "math",
+        course: "arithmetic",
+        section: "11-fractions-arithmetic",
+        lesson: "60-mixed-number-operations",
+        title: "Дії з мішаними числами",
+        sectionTitle: "Дроби: арифметичні дії",
+    },
+    {
+        subject: "math",
+        course: "arithmetic",
+        section: "11-fractions-arithmetic",
+        lesson: "61-fractions-applications",
+        title: "Практичне застосування дробів",
+        sectionTitle: "Дроби: арифметичні дії",
+    },
 ];
 
 export function getLessonUrl(ref: LessonRef): string {
