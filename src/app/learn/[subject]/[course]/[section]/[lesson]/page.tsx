@@ -251,6 +251,30 @@ async function loadLesson(key: string): Promise<Lesson | null> {
                 const mod = await import("@/data/math/arithmetic/11-fractions-arithmetic/61-fractions-applications");
                 return mod.default as Lesson;
             }
+            case "math/arithmetic/12-decimals/62-decimal-basics": {
+                const mod = await import("@/data/math/arithmetic/12-decimals/62-decimal-basics");
+                return mod.default as Lesson;
+            }
+            case "math/arithmetic/12-decimals/63-decimal-operations": {
+                const mod = await import("@/data/math/arithmetic/12-decimals/63-decimal-operations");
+                return mod.default as Lesson;
+            }
+            case "math/arithmetic/12-decimals/64-decimal-fractions-connection": {
+                const mod = await import("@/data/math/arithmetic/12-decimals/64-decimal-fractions-connection");
+                return mod.default as Lesson;
+            }
+            case "math/arithmetic/12-decimals/65-repeating-decimals": {
+                const mod = await import("@/data/math/arithmetic/12-decimals/65-repeating-decimals");
+                return mod.default as Lesson;
+            }
+            case "math/arithmetic/12-decimals/66-rounding-decimals": {
+                const mod = await import("@/data/math/arithmetic/12-decimals/66-rounding-decimals");
+                return mod.default as Lesson;
+            }
+            case "math/arithmetic/12-decimals/67-decimals-applications": {
+                const mod = await import("@/data/math/arithmetic/12-decimals/67-decimals-applications");
+                return mod.default as Lesson;
+            }
             default:
                 return null;
         }

@@ -507,6 +507,55 @@ export const lessonRegistry: LessonRef[] = [
         title: "Практичне застосування дробів",
         sectionTitle: "Дроби: арифметичні дії",
     },
+    // ── Розділ 12: Десяткові дроби ────────────────────────────
+    {
+        subject: "math",
+        course: "arithmetic",
+        section: "12-decimals",
+        lesson: "62-decimal-basics",
+        title: "Основи десяткових дробів",
+        sectionTitle: "Десяткові дроби",
+    },
+    {
+        subject: "math",
+        course: "arithmetic",
+        section: "12-decimals",
+        lesson: "63-decimal-operations",
+        title: "Арифметичні дії з десятковими дробами",
+        sectionTitle: "Десяткові дроби",
+    },
+    {
+        subject: "math",
+        course: "arithmetic",
+        section: "12-decimals",
+        lesson: "64-decimal-fractions-connection",
+        title: "Зв'язок десяткових і звичайних дробів",
+        sectionTitle: "Десяткові дроби",
+    },
+    {
+        subject: "math",
+        course: "arithmetic",
+        section: "12-decimals",
+        lesson: "65-repeating-decimals",
+        title: "Нескінченні і повторювані десяткові дроби",
+        sectionTitle: "Десяткові дроби",
+    },
+    {
+        subject: "math",
+        course: "arithmetic",
+        section: "12-decimals",
+        lesson: "66-rounding-decimals",
+        title: "Округлення десяткових дробів",
+        sectionTitle: "Десяткові дроби",
+    },
+    {
+        subject: "math",
+        course: "arithmetic",
+        section: "12-decimals",
+        lesson: "67-decimals-applications",
+        title: "Практичне застосування десяткових дробів",
+        sectionTitle: "Десяткові дроби",
+    },
 ];
 
 export function getLessonUrl(ref: LessonRef): string {
