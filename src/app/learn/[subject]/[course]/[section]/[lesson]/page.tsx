@@ -275,6 +275,46 @@ async function loadLesson(key: string): Promise<Lesson | null> {
                 const mod = await import("@/data/math/arithmetic/12-decimals/67-decimals-applications");
                 return mod.default as Lesson;
             }
+            case "math/arithmetic/13-ratios/68-ratio-basics": {
+                const mod = await import("@/data/math/arithmetic/13-ratios/68-ratio-basics");
+                return mod.default as Lesson;
+            }
+            case "math/arithmetic/13-ratios/69-proportions": {
+                const mod = await import("@/data/math/arithmetic/13-ratios/69-proportions");
+                return mod.default as Lesson;
+            }
+            case "math/arithmetic/13-ratios/70-direct-inverse-proportion": {
+                const mod = await import("@/data/math/arithmetic/13-ratios/70-direct-inverse-proportion");
+                return mod.default as Lesson;
+            }
+            case "math/arithmetic/13-ratios/71-ratio-applications": {
+                const mod = await import("@/data/math/arithmetic/13-ratios/71-ratio-applications");
+                return mod.default as Lesson;
+            }
+            case "math/arithmetic/14-percentages/75-percent-basics": {
+                const mod = await import("@/data/math/arithmetic/14-percentages/75-percent-basics");
+                return mod.default as Lesson;
+            }
+            case "math/arithmetic/14-percentages/76-mental-percent": {
+                const mod = await import("@/data/math/arithmetic/14-percentages/76-mental-percent");
+                return mod.default as Lesson;
+            }
+            case "math/arithmetic/14-percentages/77-percent-problems": {
+                const mod = await import("@/data/math/arithmetic/14-percentages/77-percent-problems");
+                return mod.default as Lesson;
+            }
+            case "math/arithmetic/14-percentages/78-percent-change": {
+                const mod = await import("@/data/math/arithmetic/14-percentages/78-percent-change");
+                return mod.default as Lesson;
+            }
+            case "math/arithmetic/14-percentages/79-financial-percent": {
+                const mod = await import("@/data/math/arithmetic/14-percentages/79-financial-percent");
+                return mod.default as Lesson;
+            }
+            case "math/arithmetic/14-percentages/80-interest-rates": {
+                const mod = await import("@/data/math/arithmetic/14-percentages/80-interest-rates");
+                return mod.default as Lesson;
+            }
             default:
                 return null;
         }
