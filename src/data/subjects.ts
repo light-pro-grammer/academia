@@ -59,6 +59,7 @@ export const subjects: SubjectInfo[] = [
                     { id: "01-algebraic-thinking", title: "Основи алгебраїчного мислення", lessonCount: 5 },
                     { id: "02-simplifying-expressions", title: "Спрощення виразів", lessonCount: 5 },
                     { id: "03-linear-equations", title: "Лінійні рівняння з однією змінною", lessonCount: 6 },
+                    { id: "04-linear-inequalities", title: "Лінійні нерівності з однією змінною", lessonCount: 6 },
                 ],
             },
             { id: "geometry", title: "Геометрія та тригонометрія", description: "Планіметрія, стереометрія і тригонометричні функції", sections: [] },

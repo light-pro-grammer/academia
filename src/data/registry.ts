@@ -888,6 +888,55 @@ export const lessonRegistry: LessonRef[] = [
         title: "Текстові задачі",
         sectionTitle: "Лінійні рівняння з однією змінною",
     },
+    // ── Розділ 4: Лінійні нерівності з однією змінною ─────────
+    {
+        subject: "math",
+        course: "algebra",
+        section: "04-linear-inequalities",
+        lesson: "17-inequality-basics",
+        title: "Основи нерівностей та їх запис",
+        sectionTitle: "Лінійні нерівності з однією змінною",
+    },
+    {
+        subject: "math",
+        course: "algebra",
+        section: "04-linear-inequalities",
+        lesson: "18-inequality-properties",
+        title: "Властивості нерівностей",
+        sectionTitle: "Лінійні нерівності з однією змінною",
+    },
+    {
+        subject: "math",
+        course: "algebra",
+        section: "04-linear-inequalities",
+        lesson: "19-solving-inequalities",
+        title: "Розв'язування лінійних нерівностей",
+        sectionTitle: "Лінійні нерівності з однією змінною",
+    },
+    {
+        subject: "math",
+        course: "algebra",
+        section: "04-linear-inequalities",
+        lesson: "20-compound-inequalities",
+        title: "Складені нерівності",
+        sectionTitle: "Лінійні нерівності з однією змінною",
+    },
+    {
+        subject: "math",
+        course: "algebra",
+        section: "04-linear-inequalities",
+        lesson: "21-absolute-value-equations",
+        title: "Рівняння та нерівності з модулем",
+        sectionTitle: "Лінійні нерівності з однією змінною",
+    },
+    {
+        subject: "math",
+        course: "algebra",
+        section: "04-linear-inequalities",
+        lesson: "22-inequality-applications",
+        title: "Практичне застосування нерівностей",
+        sectionTitle: "Лінійні нерівності з однією змінною",
+    },
 ];
 
 export function getLessonUrl(ref: LessonRef): string {

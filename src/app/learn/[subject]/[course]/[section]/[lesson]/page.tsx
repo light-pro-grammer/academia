@@ -435,6 +435,30 @@ async function loadLesson(key: string): Promise<Lesson | null> {
                 const mod = await import("@/data/math/algebra/03-linear-equations/16-word-problems");
                 return mod.default as Lesson;
             }
+            case "math/algebra/04-linear-inequalities/17-inequality-basics": {
+                const mod = await import("@/data/math/algebra/04-linear-inequalities/17-inequality-basics");
+                return mod.default as Lesson;
+            }
+            case "math/algebra/04-linear-inequalities/18-inequality-properties": {
+                const mod = await import("@/data/math/algebra/04-linear-inequalities/18-inequality-properties");
+                return mod.default as Lesson;
+            }
+            case "math/algebra/04-linear-inequalities/19-solving-inequalities": {
+                const mod = await import("@/data/math/algebra/04-linear-inequalities/19-solving-inequalities");
+                return mod.default as Lesson;
+            }
+            case "math/algebra/04-linear-inequalities/20-compound-inequalities": {
+                const mod = await import("@/data/math/algebra/04-linear-inequalities/20-compound-inequalities");
+                return mod.default as Lesson;
+            }
+            case "math/algebra/04-linear-inequalities/21-absolute-value-equations": {
+                const mod = await import("@/data/math/algebra/04-linear-inequalities/21-absolute-value-equations");
+                return mod.default as Lesson;
+            }
+            case "math/algebra/04-linear-inequalities/22-inequality-applications": {
+                const mod = await import("@/data/math/algebra/04-linear-inequalities/22-inequality-applications");
+                return mod.default as Lesson;
+            }
             default:
                 return null;
         }
