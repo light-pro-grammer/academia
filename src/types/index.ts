@@ -1,13 +1,14 @@
 // ─── Блоки контенту уроку ───────────────────────────────────────────────────
 
 export type ContentBlock =
-    | { type: "text"; content: string }
+    | { type: "text"; content?: string; parts?: Array<{ text: string; href?: string }> }
     | { type: "math"; content: string; display?: boolean }
-    | { type: "heading"; level: 2 | 3; content: string }
+    | { type: "heading"; level: number; content: string }
     | { type: "list"; items: string[]; ordered?: boolean }
     | { type: "callout"; kind: "info" | "warning" | "example" | "definition"; title?: string; content: string }
     | { type: "math-block"; content: string }
     | { type: "image"; src: string; alt: string; caption?: string }
+    | { type: "link"; href: string; label: string; external?: boolean }
     | { type: "component"; name: string; props?: Record<string, unknown> }
     | { type: "divider" };
 

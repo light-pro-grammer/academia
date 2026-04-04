@@ -5,8 +5,21 @@ import type { ContentBlock } from "@/types";
 
 // Рендер рядка з інлайновими формулами типу "текст $формула$ текст"
 export function renderInline(text: string): React.ReactNode {
-    const parts = text.split(/(\$[^$]+\$)/g);
+    const parts = text.split(/(\*\*[^*]+\*\*|\$[^$]+\$|`[^`]+`)/g);
     return parts.map((part, i) => {
+        if (part.startsWith("**") && part.endsWith("**")) {
+            return <strong key={i}>{part.slice(2, -2)}</strong>;
+        }
+        if (part.startsWith("`") && part.endsWith("`")) {
+            return (
+                <code
+                    key={i}
+                    className="bg-gray-200 text-red-700 px-1.5 py-0.5 rounded text-[0.85em] font-mono"
+                >
+                    {part.slice(1, -1)}
+                </code>
+            );
+        }
         if (part.startsWith("$") && part.endsWith("$")) {
             const latex = part.slice(1, -1);
             try {
@@ -24,7 +37,22 @@ export function renderInline(text: string): React.ReactNode {
 export function renderBlock(block: ContentBlock): React.ReactNode {
     switch (block.type) {
         case "text":
-            return <p className="text-gray-700 leading-relaxed">{renderInline(block.content)}</p>;
+            if (block.parts) {
+                return (
+                    <p className="text-gray-700 leading-relaxed">
+                        {block.parts.map((part, j) =>
+                            part.href ? (
+                                <a key={j} href={part.href} target="_blank" rel="noopener noreferrer">
+                                    {part.text}
+                                </a>
+                            ) : (
+                                <span key={j}>{renderInline(part.text)}</span>
+                            )
+                        )}
+                    </p>
+                );
+            }
+            return <p className="text-gray-700 leading-relaxed">{renderInline(block.content!)}</p>;
 
         case "heading":
             if (block.level === 2) return (
@@ -101,6 +129,17 @@ export function renderBlock(block: ContentBlock): React.ReactNode {
                         <figcaption className="text-center text-sm text-gray-500 mt-2">{block.caption}</figcaption>
                     )}
                 </figure>
+            );
+
+        case "link":
+            return (
+
+                <a href={block.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    {block.label}
+                </a>
             );
 
         case "divider":

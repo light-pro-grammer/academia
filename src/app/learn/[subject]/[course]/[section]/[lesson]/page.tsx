@@ -351,6 +351,46 @@ async function loadLesson(key: string): Promise<Lesson | null> {
                 const mod = await import("@/data/math/arithmetic/16-measurements/89-time-temperature");
                 return mod.default as Lesson;
             }
+            case "math/arithmetic/17-real-numbers/90-real-number-system": {
+                const mod = await import("@/data/math/arithmetic/17-real-numbers/90-real-number-system");
+                return mod.default as Lesson;
+            }
+            case "math/arithmetic/17-real-numbers/91-rational-representations": {
+                const mod = await import("@/data/math/arithmetic/17-real-numbers/91-rational-representations");
+                return mod.default as Lesson;
+            }
+            case "math/arithmetic/17-real-numbers/92-irrational-numbers": {
+                const mod = await import("@/data/math/arithmetic/17-real-numbers/92-irrational-numbers");
+                return mod.default as Lesson;
+            }
+            case "math/arithmetic/17-real-numbers/93-rational-arithmetic": {
+                const mod = await import("@/data/math/arithmetic/17-real-numbers/93-rational-arithmetic");
+                return mod.default as Lesson;
+            }
+            case "math/arithmetic/17-real-numbers/94-rational-properties": {
+                const mod = await import("@/data/math/arithmetic/17-real-numbers/94-rational-properties");
+                return mod.default as Lesson;
+            }
+            case "math/algebra/01-algebraic-thinking/01-intro-to-algebra": {
+                const mod = await import("@/data/math/algebra/01-algebraic-thinking/01-intro-to-algebra");
+                return mod.default as Lesson;
+            }
+            case "math/algebra/01-algebraic-thinking/02-language-of-algebra": {
+                const mod = await import("@/data/math/algebra/01-algebraic-thinking/02-language-of-algebra");
+                return mod.default as Lesson;
+            }
+            case "math/algebra/01-algebraic-thinking/03-expression-structure": {
+                const mod = await import("@/data/math/algebra/01-algebraic-thinking/03-expression-structure");
+                return mod.default as Lesson;
+            }
+            case "math/algebra/01-algebraic-thinking/04-real-number-properties": {
+                const mod = await import("@/data/math/algebra/01-algebraic-thinking/04-real-number-properties");
+                return mod.default as Lesson;
+            }
+            case "math/algebra/01-algebraic-thinking/05-evaluating-expressions": {
+                const mod = await import("@/data/math/algebra/01-algebraic-thinking/05-evaluating-expressions");
+                return mod.default as Lesson;
+            }
             default:
                 return null;
         }

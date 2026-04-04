@@ -712,6 +712,92 @@ export const lessonRegistry: LessonRef[] = [
         title: "Час та температура",
         sectionTitle: "Вимірювання",
     },
+    // ── Розділ 17: Раціональні числа та система дійсних чисел ─
+    {
+        subject: "math",
+        course: "arithmetic",
+        section: "17-real-numbers",
+        lesson: "90-real-number-system",
+        title: "Система дійсних чисел та класифікація",
+        sectionTitle: "Раціональні числа та система дійсних чисел",
+    },
+    {
+        subject: "math",
+        course: "arithmetic",
+        section: "17-real-numbers",
+        lesson: "91-rational-representations",
+        title: "Раціональні числа та їх подання",
+        sectionTitle: "Раціональні числа та система дійсних чисел",
+    },
+    {
+        subject: "math",
+        course: "arithmetic",
+        section: "17-real-numbers",
+        lesson: "92-irrational-numbers",
+        title: "Ірраціональні числа",
+        sectionTitle: "Раціональні числа та система дійсних чисел",
+    },
+    {
+        subject: "math",
+        course: "arithmetic",
+        section: "17-real-numbers",
+        lesson: "93-rational-arithmetic",
+        title: "Арифметичні дії з раціональними числами",
+        sectionTitle: "Раціональні числа та система дійсних чисел",
+    },
+    {
+        subject: "math",
+        course: "arithmetic",
+        section: "17-real-numbers",
+        lesson: "94-rational-properties",
+        title: "Властивості раціональних чисел",
+        sectionTitle: "Раціональні числа та система дійсних чисел",
+    },
+    // ═══════════════════════════════════════════════════════════
+    // АЛГЕБРА
+    // ═══════════════════════════════════════════════════════════
+
+    // ── Розділ 1: Основи алгебраїчного мислення ───────────────
+    {
+        subject: "math",
+        course: "algebra",
+        section: "01-algebraic-thinking",
+        lesson: "01-intro-to-algebra",
+        title: "Вступ до алгебри",
+        sectionTitle: "Основи алгебраїчного мислення",
+    },
+    {
+        subject: "math",
+        course: "algebra",
+        section: "01-algebraic-thinking",
+        lesson: "02-language-of-algebra",
+        title: "Мова алгебри: переклад задач",
+        sectionTitle: "Основи алгебраїчного мислення",
+    },
+    {
+        subject: "math",
+        course: "algebra",
+        section: "01-algebraic-thinking",
+        lesson: "03-expression-structure",
+        title: "Структура алгебраїчних виразів",
+        sectionTitle: "Основи алгебраїчного мислення",
+    },
+    {
+        subject: "math",
+        course: "algebra",
+        section: "01-algebraic-thinking",
+        lesson: "04-real-number-properties",
+        title: "Властивості дійсних чисел та рівностей",
+        sectionTitle: "Основи алгебраїчного мислення",
+    },
+    {
+        subject: "math",
+        course: "algebra",
+        section: "01-algebraic-thinking",
+        lesson: "05-evaluating-expressions",
+        title: "Обчислення виразів та модуль",
+        sectionTitle: "Основи алгебраїчного мислення",
+    },
 ];
 
 export function getLessonUrl(ref: LessonRef): string {
