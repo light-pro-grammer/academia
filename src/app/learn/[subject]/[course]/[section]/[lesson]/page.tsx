@@ -391,6 +391,50 @@ async function loadLesson(key: string): Promise<Lesson | null> {
                 const mod = await import("@/data/math/algebra/01-algebraic-thinking/05-evaluating-expressions");
                 return mod.default as Lesson;
             }
+            case "math/algebra/02-simplifying-expressions/06-combining-like-terms": {
+                const mod = await import("@/data/math/algebra/02-simplifying-expressions/06-combining-like-terms");
+                return mod.default as Lesson;
+            }
+            case "math/algebra/02-simplifying-expressions/07-distributive-property": {
+                const mod = await import("@/data/math/algebra/02-simplifying-expressions/07-distributive-property");
+                return mod.default as Lesson;
+            }
+            case "math/algebra/02-simplifying-expressions/08-complex-simplification": {
+                const mod = await import("@/data/math/algebra/02-simplifying-expressions/08-complex-simplification");
+                return mod.default as Lesson;
+            }
+            case "math/algebra/02-simplifying-expressions/09-factoring-gcf": {
+                const mod = await import("@/data/math/algebra/02-simplifying-expressions/09-factoring-gcf");
+                return mod.default as Lesson;
+            }
+            case "math/algebra/02-simplifying-expressions/10-absolute-value-expressions": {
+                const mod = await import("@/data/math/algebra/02-simplifying-expressions/10-absolute-value-expressions");
+                return mod.default as Lesson;
+            }
+            case "math/algebra/03-linear-equations/11-equation-basics": {
+                const mod = await import("@/data/math/algebra/03-linear-equations/11-equation-basics");
+                return mod.default as Lesson;
+            }
+            case "math/algebra/03-linear-equations/12-one-two-step-equations": {
+                const mod = await import("@/data/math/algebra/03-linear-equations/12-one-two-step-equations");
+                return mod.default as Lesson;
+            }
+            case "math/algebra/03-linear-equations/13-multi-step-equations": {
+                const mod = await import("@/data/math/algebra/03-linear-equations/13-multi-step-equations");
+                return mod.default as Lesson;
+            }
+            case "math/algebra/03-linear-equations/14-fraction-equations": {
+                const mod = await import("@/data/math/algebra/03-linear-equations/14-fraction-equations");
+                return mod.default as Lesson;
+            }
+            case "math/algebra/03-linear-equations/15-literal-equations": {
+                const mod = await import("@/data/math/algebra/03-linear-equations/15-literal-equations");
+                return mod.default as Lesson;
+            }
+            case "math/algebra/03-linear-equations/16-word-problems": {
+                const mod = await import("@/data/math/algebra/03-linear-equations/16-word-problems");
+                return mod.default as Lesson;
+            }
             default:
                 return null;
         }
