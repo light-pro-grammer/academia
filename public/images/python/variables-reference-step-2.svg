@@ -1,0 +1,14 @@
+<svg width="960" height="300" viewBox="0 0 960 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="960" height="300" rx="24" fill="#F8FAFC"/>
+  <rect x="72" y="54" width="180" height="84" rx="20" fill="#DBEAFE" stroke="#3B82F6" stroke-width="3"/>
+  <text x="162" y="108" text-anchor="middle" font-family="Arial, sans-serif" font-size="36" font-weight="700" fill="#1E3A8A">x</text>
+  <rect x="72" y="162" width="180" height="84" rx="20" fill="#E9D5FF" stroke="#8B5CF6" stroke-width="3"/>
+  <text x="162" y="216" text-anchor="middle" font-family="Arial, sans-serif" font-size="36" font-weight="700" fill="#6D28D9">y</text>
+  <path d="M282 96H536" stroke="#2563EB" stroke-width="6" stroke-linecap="round"/>
+  <path d="M536 96L512 80V112L536 96Z" fill="#2563EB"/>
+  <path d="M282 204H536" stroke="#7C3AED" stroke-width="6" stroke-linecap="round"/>
+  <path d="M536 204L512 188V220L536 204Z" fill="#7C3AED"/>
+  <rect x="566" y="102" width="260" height="96" rx="20" fill="#DCFCE7" stroke="#16A34A" stroke-width="3"/>
+  <text x="696" y="142" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" font-weight="700" fill="#166534">той самий об'єкт</text>
+  <text x="696" y="172" text-anchor="middle" font-family="Arial, sans-serif" font-size="40" font-weight="700" fill="#166534">5</text>
+</svg>

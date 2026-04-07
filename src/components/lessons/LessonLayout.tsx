@@ -20,12 +20,12 @@ export default function LessonLayout({ subject, chapter, title, lessonId, prev, 
   return (
     <div className="min-h-screen bg-gray-50">
       <header className="border-b border-gray-200 bg-white px-6 py-4">
-        <nav className="max-w-3xl mx-auto flex items-center gap-2 text-sm text-gray-400">
+        <nav className="max-w-3xl mx-auto flex items-center gap-2 overflow-hidden whitespace-nowrap text-sm text-gray-400">
           <Link href="/" className="hover:text-gray-700">Академія</Link>
           <span>›</span>
           <Link href={`/learn/${subject.toLowerCase()}`} className="hover:text-gray-700">{subject}</Link>
           <span>›</span>
-          <span className="text-gray-600">{chapter}</span>
+          <span className="min-w-0 truncate text-gray-600">{chapter}</span>
         </nav>
       </header>
 

@@ -2,6 +2,7 @@
 
 export type ContentBlock =
     | { type: "text"; content?: string; parts?: Array<{ text: string; href?: string }> }
+    | { type: "code"; content: string; language?: string; caption?: string }
     | { type: "math"; content: string; display?: boolean }
     | { type: "heading"; level: number; content: string }
     | { type: "list"; items: string[]; ordered?: boolean }

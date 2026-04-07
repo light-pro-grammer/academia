@@ -1,12 +1,179 @@
 import { notFound } from "next/navigation";
+import LearnShell from "@/components/learn/LearnShell";
 import LessonPage from "@/components/lessons/LessonPage";
 import type { Lesson } from "@/types";
 import { getAdjacentLessons, getLessonUrl } from "@/data/registry";
 import { getSubject, getCourse } from "@/data/subjects";
+import { getLessonProgressId } from "@/lib/learningCatalog";
+import { getOperatorLesson } from "@/data/python/operator-lessons";
+import { getPythonPlaceholderLesson } from "@/data/python/placeholderCatalog";
 
 async function loadLesson(key: string): Promise<Lesson | null> {
     try {
         switch (key) {
+            case "programming-languages/python/python-foundations/01-python-introduction": {
+                const mod = await import("@/data/python/01-python-introduction");
+                return mod.default as Lesson;
+            }
+            case "programming-languages/python/python-foundations/02-python-environment": {
+                const mod = await import("@/data/python/02-python-environment");
+                return mod.default as Lesson;
+            }
+            case "programming-languages/python/python-foundations/03-installers-conda": {
+                const mod = await import("@/data/python/03-installers-conda");
+                return mod.default as Lesson;
+            }
+            case "programming-languages/python/python-foundations/04-python-repl-and-terminal": {
+                const mod = await import("@/data/python/04-python-repl-and-terminal");
+                return mod.default as Lesson;
+            }
+            case "programming-languages/python/python-foundations/05-python-editors-vscode": {
+                const mod = await import("@/data/python/05-python-editors-vscode");
+                return mod.default as Lesson;
+            }
+            case "programming-languages/python/python-basics/06-first-program": {
+                const mod = await import("@/data/python/03-first-program");
+                return mod.default as Lesson;
+            }
+            case "programming-languages/python/python-basics/07-variables-and-assignment": {
+                const mod = await import("@/data/python/04-variables-and-input");
+                return mod.default as Lesson;
+            }
+            case "programming-languages/python/python-basics/08-typing-and-object-properties": {
+                const mod = await import("@/data/python/08-typing-and-object-properties");
+                return mod.default as Lesson;
+            }
+            case "programming-languages/python/python-basics/09-numeric-types-and-literals": {
+                const mod = await import("@/data/python/09-numeric-types-and-literals");
+                return mod.default as Lesson;
+            }
+            case "programming-languages/python/python-basics/10-other-basic-data-types": {
+                const mod = await import("@/data/python/10-other-basic-data-types");
+                return mod.default as Lesson;
+            }
+            case "programming-languages/python/python-operators/11-arithmetic-operators":
+            case "programming-languages/python/python-operators/12-comparison-identity-membership":
+            case "programming-languages/python/python-operators/13-logical-and-bitwise-operators":
+            case "programming-languages/python/python-operators/14-special-operators-and-overloading": {
+                const lessonId = key.split("/").at(-1);
+                return lessonId ? getOperatorLesson(lessonId) : null;
+            }
+            case "programming-languages/python/python-strings/15-strings-basics-creation-escaping": {
+                const mod = await import("@/data/python/15-strings-basics-creation-escaping");
+                return mod.default as Lesson;
+            }
+            case "programming-languages/python/python-strings/16-string-operations-indexing-slicing": {
+                const mod = await import("@/data/python/16-string-operations-indexing-slicing");
+                return mod.default as Lesson;
+            }
+            case "programming-languages/python/python-strings/17-string-methods-formatting-search": {
+                const mod = await import("@/data/python/17-string-methods-formatting-search");
+                return mod.default as Lesson;
+            }
+            case "programming-languages/python/python-strings/18-string-methods-content-checks": {
+                const mod = await import("@/data/python/18-string-methods-content-checks");
+                return mod.default as Lesson;
+            }
+            case "programming-languages/python/python-strings/19-string-formatting-and-interpolation": {
+                const mod = await import("@/data/python/19-string-formatting-and-interpolation");
+                return mod.default as Lesson;
+            }
+            case "programming-languages/python/python-strings/20-string-encoding-and-memory": {
+                const mod = await import("@/data/python/20-string-encoding-and-memory");
+                return mod.default as Lesson;
+            }
+            case "programming-languages/python/python-flow-functions/21-conditional-statements": {
+                const mod = await import("@/data/python/21-conditional-statements");
+                return mod.default as Lesson;
+            }
+            case "programming-languages/python/python-flow-functions/22-pattern-matching": {
+                const mod = await import("@/data/python/22-pattern-matching");
+                return mod.default as Lesson;
+            }
+            case "programming-languages/python/python-flow-functions/23-loops-and-iteration": {
+                const mod = await import("@/data/python/23-loops-and-iteration");
+                return mod.default as Lesson;
+            }
+            case "programming-languages/python/python-flow-functions/24-loop-control": {
+                const mod = await import("@/data/python/24-loop-control");
+                return mod.default as Lesson;
+            }
+            case "programming-languages/python/python-flow-functions/25-iteration-helpers": {
+                const mod = await import("@/data/python/25-iteration-helpers");
+                return mod.default as Lesson;
+            }
+            case "programming-languages/python/python-functions/26-function-basics": {
+                const mod = await import("@/data/python/26-function-basics");
+                return mod.default as Lesson;
+            }
+            case "programming-languages/python/python-functions/27-function-arguments-and-parameters": {
+                const mod = await import("@/data/python/27-function-arguments-and-parameters");
+                return mod.default as Lesson;
+            }
+            case "programming-languages/python/python-functions/28-variable-scope": {
+                const mod = await import("@/data/python/28-variable-scope");
+                return mod.default as Lesson;
+            }
+            case "programming-languages/python/python-functions/29-first-class-functions-lambdas-closures": {
+                const mod = await import("@/data/python/29-first-class-functions-lambdas-closures");
+                return mod.default as Lesson;
+            }
+            case "programming-languages/python/python-functions/30-recursion": {
+                const mod = await import("@/data/python/30-recursion");
+                return mod.default as Lesson;
+            }
+            case "programming-languages/python/python-functions/31-docstrings-annotations-introspection": {
+                const mod = await import("@/data/python/31-docstrings-annotations-introspection");
+                return mod.default as Lesson;
+            }
+            case "programming-languages/python/python-data-structures/32-lists": {
+                const mod = await import("@/data/python/32-lists");
+                return mod.default as Lesson;
+            }
+            case "programming-languages/python/python-data-structures/33-tuples": {
+                const mod = await import("@/data/python/33-tuples");
+                return mod.default as Lesson;
+            }
+            case "programming-languages/python/python-data-structures/34-dictionaries": {
+                const mod = await import("@/data/python/34-dictionaries");
+                return mod.default as Lesson;
+            }
+            case "programming-languages/python/python-data-structures/35-sets": {
+                const mod = await import("@/data/python/35-sets");
+                return mod.default as Lesson;
+            }
+            case "programming-languages/python/python-data-structures/36-ranges": {
+                const mod = await import("@/data/python/36-ranges");
+                return mod.default as Lesson;
+            }
+            case "programming-languages/python/python-comprehensions/37-comprehensions-basics": {
+                const mod = await import("@/data/python/37-comprehensions-basics");
+                return mod.default as Lesson;
+            }
+            case "programming-languages/python/python-comprehensions/38-generator-expressions-and-optimization": {
+                const mod = await import("@/data/python/38-generator-expressions-and-optimization");
+                return mod.default as Lesson;
+            }
+            case "programming-languages/python/python-comprehensions/39-advanced-comprehension-techniques": {
+                const mod = await import("@/data/python/39-advanced-comprehension-techniques");
+                return mod.default as Lesson;
+            }
+            case "programming-languages/python/python-iterators-generators/40-iterator-protocol": {
+                const mod = await import("@/data/python/40-iterator-protocol");
+                return mod.default as Lesson;
+            }
+            case "programming-languages/python/python-iterators-generators/41-generator-functions": {
+                const mod = await import("@/data/python/41-generator-functions");
+                return mod.default as Lesson;
+            }
+            case "programming-languages/python/python-iterators-generators/42-itertools-module": {
+                const mod = await import("@/data/python/42-itertools-module");
+                return mod.default as Lesson;
+            }
+            case "programming-languages/python/python-iterators-generators/43-functools-module": {
+                const mod = await import("@/data/python/43-functools-module");
+                return mod.default as Lesson;
+            }
             case "math/arithmetic/01-numbers/01-number-basics": {
                 const mod = await import("@/data/math/arithmetic/01-numbers/01-number-basics");
                 return mod.default as Lesson;
@@ -371,96 +538,16 @@ async function loadLesson(key: string): Promise<Lesson | null> {
                 const mod = await import("@/data/math/arithmetic/17-real-numbers/94-rational-properties");
                 return mod.default as Lesson;
             }
-            case "math/algebra/01-algebraic-thinking/01-intro-to-algebra": {
-                const mod = await import("@/data/math/algebra/01-algebraic-thinking/01-intro-to-algebra");
+            case "math/algebra/01-algebraic-thinking/01-what-is-algebra": {
+                const mod = await import("@/data/math/algebra/01-algebraic-thinking/01-what-is-algebra");
                 return mod.default as Lesson;
             }
-            case "math/algebra/01-algebraic-thinking/02-language-of-algebra": {
-                const mod = await import("@/data/math/algebra/01-algebraic-thinking/02-language-of-algebra");
-                return mod.default as Lesson;
-            }
-            case "math/algebra/01-algebraic-thinking/03-expression-structure": {
-                const mod = await import("@/data/math/algebra/01-algebraic-thinking/03-expression-structure");
-                return mod.default as Lesson;
-            }
-            case "math/algebra/01-algebraic-thinking/04-real-number-properties": {
-                const mod = await import("@/data/math/algebra/01-algebraic-thinking/04-real-number-properties");
-                return mod.default as Lesson;
-            }
-            case "math/algebra/01-algebraic-thinking/05-evaluating-expressions": {
-                const mod = await import("@/data/math/algebra/01-algebraic-thinking/05-evaluating-expressions");
-                return mod.default as Lesson;
-            }
-            case "math/algebra/02-simplifying-expressions/06-combining-like-terms": {
-                const mod = await import("@/data/math/algebra/02-simplifying-expressions/06-combining-like-terms");
-                return mod.default as Lesson;
-            }
-            case "math/algebra/02-simplifying-expressions/07-distributive-property": {
-                const mod = await import("@/data/math/algebra/02-simplifying-expressions/07-distributive-property");
-                return mod.default as Lesson;
-            }
-            case "math/algebra/02-simplifying-expressions/08-complex-simplification": {
-                const mod = await import("@/data/math/algebra/02-simplifying-expressions/08-complex-simplification");
-                return mod.default as Lesson;
-            }
-            case "math/algebra/02-simplifying-expressions/09-factoring-gcf": {
-                const mod = await import("@/data/math/algebra/02-simplifying-expressions/09-factoring-gcf");
-                return mod.default as Lesson;
-            }
-            case "math/algebra/02-simplifying-expressions/10-absolute-value-expressions": {
-                const mod = await import("@/data/math/algebra/02-simplifying-expressions/10-absolute-value-expressions");
-                return mod.default as Lesson;
-            }
-            case "math/algebra/03-linear-equations/11-equation-basics": {
-                const mod = await import("@/data/math/algebra/03-linear-equations/11-equation-basics");
-                return mod.default as Lesson;
-            }
-            case "math/algebra/03-linear-equations/12-one-two-step-equations": {
-                const mod = await import("@/data/math/algebra/03-linear-equations/12-one-two-step-equations");
-                return mod.default as Lesson;
-            }
-            case "math/algebra/03-linear-equations/13-multi-step-equations": {
-                const mod = await import("@/data/math/algebra/03-linear-equations/13-multi-step-equations");
-                return mod.default as Lesson;
-            }
-            case "math/algebra/03-linear-equations/14-fraction-equations": {
-                const mod = await import("@/data/math/algebra/03-linear-equations/14-fraction-equations");
-                return mod.default as Lesson;
-            }
-            case "math/algebra/03-linear-equations/15-literal-equations": {
-                const mod = await import("@/data/math/algebra/03-linear-equations/15-literal-equations");
-                return mod.default as Lesson;
-            }
-            case "math/algebra/03-linear-equations/16-word-problems": {
-                const mod = await import("@/data/math/algebra/03-linear-equations/16-word-problems");
-                return mod.default as Lesson;
-            }
-            case "math/algebra/04-linear-inequalities/17-inequality-basics": {
-                const mod = await import("@/data/math/algebra/04-linear-inequalities/17-inequality-basics");
-                return mod.default as Lesson;
-            }
-            case "math/algebra/04-linear-inequalities/18-inequality-properties": {
-                const mod = await import("@/data/math/algebra/04-linear-inequalities/18-inequality-properties");
-                return mod.default as Lesson;
-            }
-            case "math/algebra/04-linear-inequalities/19-solving-inequalities": {
-                const mod = await import("@/data/math/algebra/04-linear-inequalities/19-solving-inequalities");
-                return mod.default as Lesson;
-            }
-            case "math/algebra/04-linear-inequalities/20-compound-inequalities": {
-                const mod = await import("@/data/math/algebra/04-linear-inequalities/20-compound-inequalities");
-                return mod.default as Lesson;
-            }
-            case "math/algebra/04-linear-inequalities/21-absolute-value-equations": {
-                const mod = await import("@/data/math/algebra/04-linear-inequalities/21-absolute-value-equations");
-                return mod.default as Lesson;
-            }
-            case "math/algebra/04-linear-inequalities/22-inequality-applications": {
-                const mod = await import("@/data/math/algebra/04-linear-inequalities/22-inequality-applications");
+            case "math/algebra/01-algebraic-thinking/02-algebra-vocabulary": {
+                const mod = await import("@/data/math/algebra/01-algebraic-thinking/02-algebra-vocabulary");
                 return mod.default as Lesson;
             }
             default:
-                return null;
+                return getPythonPlaceholderLesson(key);
         }
     } catch {
         return null;
@@ -490,14 +577,23 @@ export default async function Page({ params }: Props) {
     const breadcrumbs = [
         { title: subjectData?.title ?? subject, href: `/learn/${subject}` },
         { title: courseData?.title ?? course, href: `/learn/${subject}/${course}` },
+        { title: lessonData.title },
     ];
 
     return (
-        <LessonPage
-            lesson={lessonData}
+        <LearnShell
+            subjectId={subject}
+            courseId={course}
+            title={lessonData.title}
+            description={lessonData.description}
             breadcrumbs={breadcrumbs}
-            prevLesson={prev ? { title: prev.title, href: getLessonUrl(prev) } : undefined}
-            nextLesson={next ? { title: next.title, href: getLessonUrl(next) } : undefined}
-        />
+        >
+            <LessonPage
+                lesson={lessonData}
+                lessonProgressId={getLessonProgressId({ subject, course, section, lesson })}
+                prevLesson={prev ? { title: prev.title, href: getLessonUrl(prev) } : undefined}
+                nextLesson={next ? { title: next.title, href: getLessonUrl(next) } : undefined}
+            />
+        </LearnShell>
     );
 }

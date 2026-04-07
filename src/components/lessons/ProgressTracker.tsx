@@ -1,17 +1,11 @@
 "use client";
-import { useEffect, useState } from "react";
+import { markLessonCompleted, useLessonCompleted } from "@/lib/progressStore";
 
 export function useProgress(lessonId: string) {
-    const [completed, setCompleted] = useState(false);
-
-    useEffect(() => {
-        const done = localStorage.getItem(`lesson-${lessonId}`) === "done";
-        setCompleted(done);
-    }, [lessonId]);
+    const completed = useLessonCompleted(lessonId);
 
     function markDone() {
-        localStorage.setItem(`lesson-${lessonId}`, "done");
-        setCompleted(true);
+        markLessonCompleted(lessonId);
     }
 
     return { completed, markDone };

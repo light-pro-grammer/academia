@@ -1,106 +1,69 @@
-import type { Lesson } from "@/types";
-import { renderBlock } from "@/lib/renderBlock";
-import Quiz from "@/components/lessons/Quiz";
 import Link from "next/link";
-
-interface Breadcrumb {
-    title: string;
-    href: string;
-}
+import { renderBlock } from "@/lib/renderBlock";
+import type { Lesson } from "@/types";
+import ProgressTracker from "./ProgressTracker";
 
 interface Props {
     lesson: Lesson;
-    breadcrumbs?: Breadcrumb[];
+    lessonProgressId: string;
     prevLesson?: { title: string; href: string };
     nextLesson?: { title: string; href: string };
 }
 
-export default function LessonPage({ lesson, breadcrumbs, prevLesson, nextLesson }: Props) {
+export default function LessonPage({ lesson, lessonProgressId, prevLesson, nextLesson }: Props) {
     return (
-        <div className="min-h-screen bg-gray-50">
-
-            {/* Header з breadcrumbs */}
-            <header className="bg-white border-b border-gray-200 px-6 py-4">
-                <div className="max-w-2xl mx-auto flex items-center gap-2 text-sm text-gray-400 flex-wrap">
-                    <Link href="/" className="hover:text-gray-700 transition-colors">
-                        Академія Знань
-                    </Link>
-                    {breadcrumbs?.map((crumb, i) => (
-                        <span key={i} className="flex items-center gap-2">
-                            <span>›</span>
-                            <Link href={crumb.href} className="hover:text-gray-700 transition-colors">
-                                {crumb.title}
-                            </Link>
+        <div className="rounded-[32px] border border-slate-200 bg-white px-6 py-8 shadow-sm shadow-slate-200/60 lg:px-8">
+            <div className="mb-8">
+                <div className="flex flex-wrap items-center gap-3">
+                    {lesson.concepts.slice(0, 4).map((concept) => (
+                        <span
+                            key={concept}
+                            className="rounded-full bg-slate-100 px-3 py-1 text-xs font-medium text-slate-600"
+                        >
+                            {concept}
                         </span>
                     ))}
-                    <span>›</span>
-                    <span className="text-gray-700">{lesson.title}</span>
                 </div>
-            </header>
+            </div>
 
-            <div className="max-w-2xl mx-auto px-6 py-12">
+            <div className="lesson-richtext space-y-4">
+                {lesson.content.map((block, index) => (
+                    <div key={index}>{renderBlock(block)}</div>
+                ))}
+            </div>
 
-                {/* Header уроку */}
-                <div className="mb-10">
-                    <h1 className="text-3xl font-semibold text-gray-900 mb-3">
-                        {lesson.title}
-                    </h1>
-                    {lesson.description && (
-                        <p className="text-gray-500 text-lg leading-relaxed">
-                            {lesson.description}
-                        </p>
-                    )}
-                    {lesson.concepts.length > 0 && (
-                        <div className="mt-4 flex flex-wrap gap-2">
-                            {lesson.concepts.map((c, i) => (
-                                <span
-                                    key={i}
-                                    className="text-xs px-3 py-1 rounded-full bg-violet-100 text-violet-700 font-medium"
-                                >
-                                    {c}
-                                </span>
-                            ))}
+            <div className="mt-10 border-t border-slate-200 pt-6">
+                <ProgressTracker lessonId={lessonProgressId} />
+            </div>
+
+            <div className="mt-8 flex flex-col gap-3 border-t border-slate-200 pt-6 sm:flex-row sm:items-center sm:justify-between">
+                {prevLesson ? (
+                    <Link
+                        href={prevLesson.href}
+                        className="surface-link flex items-center gap-3 rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-600"
+                    >
+                        <span className="text-base">←</span>
+                        <div>
+                            <p className="text-xs uppercase tracking-[0.12em] text-slate-400">Попередній урок</p>
+                            <p className="font-medium text-slate-900">{prevLesson.title}</p>
                         </div>
-                    )}
-                </div>
-
-                {/* Контент */}
-                <div className="space-y-4">
-                    {lesson.content.map((block, i) => (
-                        <div key={i}>{renderBlock(block)}</div>
-                    ))}
-                </div>
-
-                {/* Quiz */}
-                {lesson.quiz.length > 0 && (
-                    <div className="mt-12">
-                        <Quiz questions={lesson.quiz} />
-                    </div>
+                    </Link>
+                ) : (
+                    <div />
                 )}
 
-                {/* Навігація */}
-                <div className="mt-12 pt-6 border-t border-gray-200 flex items-center justify-between">
-                    {prevLesson ? (
-                        <Link
-                            href={prevLesson.href}
-                            className="flex items-center gap-2 text-sm text-gray-500 hover:text-gray-900 transition-colors"
-                        >
-                            <span>←</span>
-                            <span>{prevLesson.title}</span>
-                        </Link>
-                    ) : <div />}
-
-                    {nextLesson && (
-                        <Link
-                            href={nextLesson.href}
-                            className="flex items-center gap-2 text-sm font-medium text-violet-700 hover:text-violet-900 transition-colors"
-                        >
-                            <span>{nextLesson.title}</span>
-                            <span>→</span>
-                        </Link>
-                    )}
-                </div>
-
+                {nextLesson && (
+                    <Link
+                        href={nextLesson.href}
+                        className="surface-link ml-auto flex items-center gap-3 rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-600"
+                    >
+                        <div className="text-right">
+                            <p className="text-xs uppercase tracking-[0.12em] text-slate-400">Наступний урок</p>
+                            <p className="font-medium text-slate-900">{nextLesson.title}</p>
+                        </div>
+                        <span className="text-base">→</span>
+                    </Link>
+                )}
             </div>
         </div>
     );

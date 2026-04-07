@@ -1,56 +1,60 @@
+import Image from "next/image";
 import Link from "next/link";
+import ContinueLearningCard from "@/components/learn/ContinueLearningCard";
 import { subjects } from "@/data/subjects";
 
 export default function Home() {
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* Header */}
-      <header className="bg-white border-b border-gray-200">
-        <div className="max-w-5xl mx-auto px-6 py-5 flex items-center justify-between">
-          <div className="flex items-center gap-3">
-            <div className="w-8 h-8 rounded-lg bg-violet-600 flex items-center justify-center">
-              <span className="text-white text-sm font-bold">А</span>
-            </div>
+      <header className="border-b border-gray-200 bg-white">
+        <div className="mx-auto flex max-w-5xl items-center justify-between px-6 py-5">
+          <div className="flex items-center gap-4">
+            <Image
+              src="/brand/academia-symbol.svg"
+              alt="Academia"
+              width={72}
+              height={72}
+              className="h-14 w-14 object-contain"
+            />
             <span className="text-lg font-semibold text-gray-900">Академія Знань</span>
           </div>
         </div>
       </header>
 
-      <main className="max-w-5xl mx-auto px-6 py-14">
-        {/* Hero */}
+      <main className="mx-auto max-w-5xl px-6 py-14">
         <div className="mb-14 text-center">
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">
-            Навчайся безкоштовно
-          </h1>
-          <p className="text-xl text-gray-500 max-w-2xl mx-auto">
-            Повний курс від основ арифметики до університетської математики,
-            фізики, хімії та інших наук. Українською мовою.
+          <h1 className="mb-4 text-4xl font-bold text-gray-900">Навчайся безкоштовно</h1>
+          <p className="mx-auto max-w-2xl text-xl text-gray-500">
+            Повний курс від основ арифметики до університетської математики, фізики, хімії та інших наук.
+            Українською мовою.
           </p>
         </div>
 
-        {/* Subjects grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          {subjects.map(subject => {
-            const hasContent = subject.courses.some(c => c.sections.length > 0);
+        <ContinueLearningCard />
+
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {subjects.map((subject) => {
+            const hasContent = subject.courses.some((course) => course.sections.length > 0);
+
             return (
               <Link
                 key={subject.id}
                 href={hasContent ? `/learn/${subject.id}` : "#"}
-                className={`group rounded-2xl border bg-white p-6 transition-all ${
+                className={`surface-link group rounded-2xl border bg-white p-6 transition-all ${
                   hasContent
-                    ? "border-gray-200 hover:border-violet-300 hover:shadow-md cursor-pointer"
-                    : "border-gray-100 opacity-50 cursor-not-allowed"
+                    ? "cursor-pointer border-gray-200 hover:border-violet-300 hover:bg-violet-50/40 hover:shadow-[0_16px_36px_rgba(79,70,229,0.10)] focus-visible:border-violet-300 focus-visible:bg-violet-50/40 focus-visible:shadow-[0_16px_36px_rgba(79,70,229,0.10)]"
+                    : "cursor-not-allowed border-gray-100 opacity-50"
                 }`}
               >
-                <div className="text-4xl mb-3">{subject.emoji}</div>
-                <h2 className="text-lg font-semibold text-gray-900 mb-1 group-hover:text-violet-700 transition-colors">
+                <div className="mb-3 text-4xl">{subject.emoji}</div>
+                <h2 className="surface-link-title mb-1 text-lg font-semibold text-gray-900 transition-colors">
                   {subject.title}
                 </h2>
-                <p className="text-sm text-gray-500 leading-relaxed">
+                <p className="surface-link-meta text-sm leading-relaxed text-gray-500 transition-colors">
                   {subject.description}
                 </p>
                 {!hasContent && (
-                  <span className="mt-3 inline-block text-xs text-gray-400 border border-gray-200 rounded-full px-3 py-1">
+                  <span className="mt-3 inline-block rounded-full border border-gray-200 px-3 py-1 text-xs text-gray-400">
                     Незабаром
                   </span>
                 )}
