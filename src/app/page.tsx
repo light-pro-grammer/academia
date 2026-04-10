@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import ContinueLearningCard from "@/components/learn/ContinueLearningCard";
 import { subjects } from "@/data/subjects";
@@ -9,13 +8,6 @@ export default function Home() {
       <header className="border-b border-gray-200 bg-white">
         <div className="mx-auto flex max-w-5xl items-center justify-between px-6 py-5">
           <div className="flex items-center gap-4">
-            <Image
-              src="/brand/academia-symbol.svg"
-              alt="Academia"
-              width={72}
-              height={72}
-              className="h-14 w-14 object-contain"
-            />
             <span className="text-lg font-semibold text-gray-900">Академія Знань</span>
           </div>
         </div>

@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { useDeferredValue, useMemo, useState } from "react";
 import { learningSearchIndex, type SearchEntry } from "@/lib/learningCatalog";
@@ -80,13 +79,6 @@ export default function LearnShell({
                             aria-label="На головну"
                             title="На головну"
                         >
-                            <Image
-                                src="/brand/academia-symbol.svg"
-                                alt="Academia"
-                                width={64}
-                                height={64}
-                                className="h-12 w-12 object-contain"
-                            />
                             <div className="min-w-0">
                                 <p className="truncate text-[1.4rem] font-semibold leading-none text-slate-950">Academia</p>
                             </div>

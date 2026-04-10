@@ -10,7 +10,6 @@ export interface CourseInfo {
 export interface SectionInfo {
     id: string;
     title: string;
-    lessonCount: number;
 }
 
 export interface SubjectInfo {
@@ -22,13 +21,9 @@ export interface SubjectInfo {
 }
 
 function createSections(
-    items: Array<{ id: string; title: string; lessonCount?: number }>
+    items: Array<{ id: string; title: string }>
 ): SectionInfo[] {
-    return items.map((item) => ({
-        id: item.id,
-        title: item.title,
-        lessonCount: item.lessonCount ?? 0,
-    }));
+    return items.map((item) => ({ id: item.id, title: item.title }));
 }
 
 const genericCourseSections = createSections([
@@ -52,33 +47,39 @@ export const subjects: SubjectInfo[] = [
         courses: [
             {
                 id: "arithmetic",
-                title: "Арифметика та вступ до алгебри",
-                description: "Числа, дії з числами, дроби, відсотки й перші алгебраїчні ідеї",
+                title: "Арифметика",
+                description: "Числа, арифметичні дії, дроби, відсотки, величини та математичне мислення",
                 sections: createSections([
-                    { id: "01-numbers", title: "Числа та лічба", lessonCount: 7 },
-                    { id: "02-place-value", title: "Розряди та десяткова система", lessonCount: 6 },
-                    { id: "03-addition", title: "Додавання", lessonCount: 5 },
-                    { id: "04-subtraction", title: "Віднімання", lessonCount: 5 },
-                    { id: "05-multiplication", title: "Множення", lessonCount: 6 },
-                    { id: "06-division", title: "Ділення", lessonCount: 6 },
-                    { id: "07-integers", title: "Цілі та від'ємні числа", lessonCount: 5 },
-                    { id: "08-order-of-operations", title: "Порядок виконання дій", lessonCount: 5 },
-                    { id: "09-factors-multiples", title: "Дільники, кратні й теорія чисел", lessonCount: 5 },
-                    { id: "10-fractions-intro", title: "Дроби: вступ і базові поняття", lessonCount: 5 },
-                    { id: "11-fractions-arithmetic", title: "Дроби: арифметичні дії", lessonCount: 6 },
-                    { id: "12-decimals", title: "Десяткові дроби", lessonCount: 6 },
-                    { id: "13-ratios", title: "Відношення та пропорції", lessonCount: 4 },
-                    { id: "14-percentages", title: "Відсотки", lessonCount: 6 },
-                    { id: "15-powers-roots", title: "Степені та корені", lessonCount: 6 },
-                    { id: "16-measurements", title: "Вимірювання", lessonCount: 3 },
-                    { id: "17-real-numbers", title: "Раціональні числа та система дійсних чисел", lessonCount: 5 },
+                    { id: "01-number-representation", title: "Числа та запис чисел" },
+                    { id: "02-arithmetic-operations", title: "Чотири арифметичні дії" },
+                    { id: "03-expressions-equations", title: "Вирази, рівності та рівняння" },
+                    { id: "04-divisibility-number-structure", title: "Подільність і будова чисел" },
+                    { id: "05-fractions", title: "Дроби" },
+                    { id: "06-decimals", title: "Десяткові дроби" },
+                    { id: "07-ratios-proportions-percentages", title: "Відношення, пропорції та відсотки" },
+                    { id: "08-measurements", title: "Величини та вимірювання" },
+                    { id: "09-negative-numbers", title: "Від’ємні числа" },
+                    { id: "10-number-system", title: "Система чисел" },
+                    { id: "11-powers-scientific-notation", title: "Степені та експоненційний запис" },
+                    { id: "12-problem-solving", title: "Задачі та математичне мислення" },
                 ]),
             },
             {
                 id: "algebra",
                 title: "Алгебра",
                 description: "Рівняння, нерівності, функції та алгебраїчні перетворення",
-                sections: createSections([{ id: "01-algebraic-thinking", title: "Початок алгебри", lessonCount: 2 }]),
+                sections: createSections([
+                    { id: "01-algebraic-thinking", title: "Вступ до алгебраїчного мислення" },
+                    { id: "02-linear-equations-inequalities", title: "Лінійні рівняння та нерівності" },
+                    { id: "03-coordinate-plane-linear-functions", title: "Координатна площина та лінійна функція" },
+                    { id: "04-systems-of-linear-equations", title: "Системи лінійних рівнянь" },
+                    { id: "05-exponents-and-polynomials", title: "Степені та многочлени" },
+                    { id: "06-factoring", title: "Розкладання на множники" },
+                    { id: "07-rational-expressions-and-equations", title: "Раціональні вирази та рівняння" },
+                    { id: "08-radicals-and-irrational-expressions", title: "Корені та ірраціональні вирази" },
+                    { id: "09-quadratic-equations", title: "Квадратні рівняння" },
+                    { id: "10-quadratic-function-and-parabola", title: "Квадратна функція та парабола" },
+                ]),
             },
             {
                 id: "geometry",
@@ -228,9 +229,15 @@ export const subjects: SubjectInfo[] = [
                 title: "Теоретичні та фундаментальні основи КН",
                 description: "Обчислюваність, алгоритми, дискретні структури, логіка й теорія інформації",
                 sections: createSections([
-                    { id: "models-of-computation", title: "Моделі обчислень" },
-                    { id: "discrete-foundations", title: "Дискретні основи" },
-                    { id: "algorithms-theory", title: "Теорія алгоритмів" },
+                    { id: "history-of-computation", title: "Історія обчислень" },
+                    { id: "mathematics-for-cs", title: "Математика для CS" },
+                    { id: "computation-theory-and-automata", title: "Теорія обчислень та автомати" },
+                    { id: "algorithms-and-complexity", title: "Алгоритми та складність" },
+                    { id: "discrete-structures", title: "Дискретні структури" },
+                    { id: "information-theory-and-coding", title: "Теорія інформації та кодування" },
+                    { id: "logic-in-computer-science", title: "Логіка в комп'ютерних науках" },
+                    { id: "formal-methods", title: "Формальні методи" },
+                    { id: "programming-language-theory", title: "Теорія мов програмування" },
                 ]),
             },
             {
@@ -316,15 +323,15 @@ export const subjects: SubjectInfo[] = [
                 title: "Python",
                 description: "Скрипти, автоматизація, бекенд, аналіз даних і практичні проєкти",
                 sections: createSections([
-                    { id: "python-foundations", title: "Знайомство та перші кроки", lessonCount: 5 },
-                    { id: "python-basics", title: "Базовий синтаксис і змінні", lessonCount: 5 },
-                    { id: "python-operators", title: "Оператори", lessonCount: 4 },
-                    { id: "python-strings", title: "Рядки (Strings)", lessonCount: 6 },
-                    { id: "python-flow-functions", title: "Керування потоком", lessonCount: 5 },
-                    { id: "python-functions", title: "Функції", lessonCount: 6 },
-                    { id: "python-data-structures", title: "Вбудовані структури даних", lessonCount: 5 },
-                    { id: "python-comprehensions", title: "Генератори колекцій та виразів", lessonCount: 3 },
-                    { id: "python-iterators-generators", title: "Ітератори та генератори", lessonCount: 4 },
+                    { id: "python-foundations", title: "Знайомство та перші кроки" },
+                    { id: "python-basics", title: "Базовий синтаксис і змінні" },
+                    { id: "python-operators", title: "Оператори" },
+                    { id: "python-strings", title: "Рядки (Strings)" },
+                    { id: "python-flow-functions", title: "Керування потоком" },
+                    { id: "python-functions", title: "Функції" },
+                    { id: "python-data-structures", title: "Вбудовані структури даних" },
+                    { id: "python-comprehensions", title: "Генератори колекцій та виразів" },
+                    { id: "python-iterators-generators", title: "Ітератори та генератори" },
                     ...pythonPlaceholderSectionInfos,
                 ]),
             },
@@ -460,4 +467,3 @@ export function getSubject(id: string): SubjectInfo | undefined {
 export function getCourse(subjectId: string, courseId: string): CourseInfo | undefined {
     return getSubject(subjectId)?.courses.find((course) => course.id === courseId);
 }
-
