@@ -3,6 +3,12 @@ import Image from "next/image";
 import katex from "katex";
 import "katex/dist/katex.min.css";
 import type { ContentBlock } from "@/types";
+import {
+    CoordinateNumberLineInteractive,
+    CoordinateOrderComparisonVisual,
+    CoordinatePlaneInteractive,
+    CoordinateQuadrantsVisual,
+} from "@/components/lessons/CoordinatePlaneVisuals";
 
 type CheckYourselfItem = {
     question: string;
@@ -265,6 +271,22 @@ export function renderBlock(block: ContentBlock): React.ReactNode {
             if (block.name === "check-yourself-accordion") {
                 const items = getAccordionItems(block.props);
                 return <CheckYourselfAccordion items={items} />;
+            }
+
+            if (block.name === "coordinate-number-line-interactive") {
+                return <CoordinateNumberLineInteractive />;
+            }
+
+            if (block.name === "coordinate-plane-interactive") {
+                return <CoordinatePlaneInteractive />;
+            }
+
+            if (block.name === "coordinate-quadrants-visual") {
+                return <CoordinateQuadrantsVisual />;
+            }
+
+            if (block.name === "coordinate-order-comparison-visual") {
+                return <CoordinateOrderComparisonVisual />;
             }
 
             return null;

@@ -246,7 +246,6 @@ export const pythonPlaceholderRegistry = pythonPlaceholderSections.flatMap((sect
 export const pythonPlaceholderSectionInfos = pythonPlaceholderSections.map((section) => ({
     id: section.id,
     title: section.title,
-    lessonCount: section.lessons.length,
 }));
 
 export function getPythonPlaceholderLesson(key: string): Lesson | null {

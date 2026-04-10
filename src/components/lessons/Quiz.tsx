@@ -1,8 +1,7 @@
 "use client";
 import { useState } from "react";
 import type { QuizQuestion, ContentBlock } from "@/types";
-import { renderBlock } from "@/lib/renderBlock";
-import { renderInline } from "@/lib/renderBlock";
+import { renderBlock, renderInline } from "@/lib/renderBlock";
 
 interface Props {
   questions: QuizQuestion[];
